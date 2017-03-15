@@ -1,7 +1,8 @@
+import {WebsocketRequest, WebsocketConnection, WebsocketMessage} from "./types/Websocket";
 var WebSocketServer = require('websocket').server;
 var http = require('http');
 
-var connections = [];
+var connections: WebsocketConnection[] = [];
 
 var server = http.createServer(function(request: any, response: any) {
   console.log((new Date()) + ' Received request for ' + request.url);
@@ -22,12 +23,12 @@ var wsServer = new WebSocketServer({
   autoAcceptConnections: false
 });
 
-function originIsAllowed(origin: any) {
+function originIsAllowed(origin: string) {
   // put logic here to detect whether the specified origin is allowed.
   return true;
 }
 
-wsServer.on('request', function(request: any) {
+wsServer.on('request', function(request: WebsocketRequest) {
   if (!originIsAllowed(request.origin)) {
     // Make sure we only accept requests from an allowed origin
     request.reject();
@@ -41,9 +42,9 @@ wsServer.on('request', function(request: any) {
     return;
   }
 
-  var connection = request.accept('echo-protocol', request.origin);
+  var connection: WebsocketConnection = request.accept('echo-protocol', request.origin);
   console.log((new Date()) + ' Connection accepted.');
-  connection.on('message', function(message: any) {
+  connection.on('message', function(message: WebsocketMessage) {
     if (message.type === 'utf8') {
       console.log('Received Message: ' + message.utf8Data);
       connection.sendUTF(message.utf8Data);
@@ -53,7 +54,7 @@ wsServer.on('request', function(request: any) {
       connection.sendBytes(message.binaryData);
     }
   });
-  connection.on('close', function(reasonCode: any, description: any) {
+  connection.on('close', function(reasonCode: string, description: string) {
     console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
   });
 });

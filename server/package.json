@@ -20,7 +20,9 @@
     "test": "npm run build && mocha --compilers ts:ts-node/register --recursive 'test/**/*-spec.ts'",
     "coverage": "nyc --reporter=text --reporter=html mocha --compilers ts:ts-node/register",
     "watch": "npm run build -- --watch",
-    "watch:test": "npm run test -- --watch"
+    "watch:test": "npm run test -- --watch",
+    "inspect": "node --inspect-brk=9222 lib/index.js",
+    "inspectnobrk": "node --inspect=9222 lib/index.js"
   },
   "dependencies": {
     "websocket": "^1.0.24"
