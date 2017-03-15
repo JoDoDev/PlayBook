@@ -1,5 +1,6 @@
 var WebSocketServer = require('websocket').server;
 var http = require('http');
+var connections = [];
 var server = http.createServer(function (request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
     response.writeHead(404);
@@ -19,6 +20,11 @@ wsServer.on('request', function (request) {
     if (!originIsAllowed(request.origin)) {
         request.reject();
         console.log((new Date()) + ' Connection from origin ' + request.origin + ' rejected.');
+        return;
+    }
+    if (request.requestedProtocols.indexOf('echo-protocol') === -1) {
+        request.reject();
+        console.log((new Date()) + ' Connection rejected wrong protocol: ' + request.requestedProtocols);
         return;
     }
     var connection = request.accept('echo-protocol', request.origin);
