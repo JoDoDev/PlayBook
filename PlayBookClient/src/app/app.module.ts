@@ -5,16 +5,24 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {MaterialModule} from "@angular/material";
+import { HomeComponent } from './site/home/home.component';
+import { LoginComponent } from './site/login/login.component';
+import { RegisterComponent } from './site/register/register.component';
+import {routing} from "./app.routing";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule
+    MaterialModule,
+    routing
   ],
   providers: [],
   entryComponents: [],
