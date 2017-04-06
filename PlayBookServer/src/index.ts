@@ -1,11 +1,13 @@
 import {WebsocketRequest, WebsocketConnection, WebsocketMessage} from "./types/Websocket";
-var WebSocketServer = require('websocket').server;
-var http = require('http');
+import {User} from "./types/User";
+var WebSocketServer = <any>(require("websocket").server);
+import * as http from "http";
 
-var connections: WebsocketConnection[] = [];
+var users: User[] = [];
+var userCounter: number = 0;
 
 var server = http.createServer(function(request: any, response: any) {
-  console.log((new Date()) + ' Received request for ' + request.url);
+  console.log((new Date()) + " Received request for " + request.url);
   response.writeHead(404);
   response.end();
 });
@@ -41,19 +43,13 @@ wsServer.on('request', function(request: WebsocketRequest) {
     console.log((new Date()) + ' Connection rejected wrong protocol: ' + request.requestedProtocols);
     return;
   }
-
   var connection: WebsocketConnection = request.accept('echo-protocol', request.origin);
   console.log((new Date()) + ' Connection accepted.');
-  connection.on('message', function(message: WebsocketMessage) {
-    if (message.type === 'utf8') {
-      console.log('Received Message: ' + message.utf8Data);
-      connection.sendUTF(message.utf8Data);
-    }
-    else if (message.type === 'binary') {
-      console.log('Received Binary Message of ' + message.binaryData.length + ' bytes');
-      connection.sendBytes(message.binaryData);
-    }
-  });
+
+  var userIndex: number = userCounter++;
+  users[userCounter] = new User(connection, userIndex);
+
+
   connection.on('close', function(reasonCode: string, description: string) {
     console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
   });

@@ -2,6 +2,7 @@
  * Created by Donato Wolfisberg on 15.03.2017.
  */
 
+
 export interface WebsocketRequest {
   origin: string;
   requestedProtocols: string[];
