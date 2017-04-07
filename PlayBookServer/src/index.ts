@@ -2,6 +2,7 @@ import {WebsocketRequest, WebsocketConnection, WebsocketMessage} from "./types/W
 import {User} from "./entity/User";
 var WebSocketServer = (require("websocket").server) as any;
 import * as http from "http";
+import generateUuid from "./util/UuidGenerator";
 
 var users: User[] = [];
 var userCounter: number = 0;
@@ -46,9 +47,9 @@ wsServer.on('request', function(request: WebsocketRequest) {
   var connection: WebsocketConnection = request.accept('echo-protocol', request.origin);
   console.log((new Date()) + ' Connection accepted.');
 
-  var userIndex: number = userCounter++;
-  users[userCounter] = new User(connection, userIndex);
-
+  var userIndex: string = generateUuid();
+  users[userIndex as any]= new User(connection, userIndex);
+  userCounter++;
 
   connection.on('close', function(reasonCode: string, description: string) {
     console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');

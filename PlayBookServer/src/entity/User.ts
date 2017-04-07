@@ -6,10 +6,10 @@ export class User{
   private email: string;
   private admin: boolean;
   private connection: WebsocketConnection;
-  private userIndex: number;
+  private userIndex: string;
 
 
-  constructor(connection: WebsocketConnection, userIndex: number){
+  constructor(connection: WebsocketConnection, userIndex: string){
     this.connection = connection;
     this.userIndex = userIndex;
 
