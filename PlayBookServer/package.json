@@ -23,6 +23,7 @@
     "watch:test": "npm run test -- --watch",
     "inspect": "node --inspect-brk=9222 lib/index.js",
     "inspectnobrk": "node --inspect=9222 lib/index.js",
+    "inspectwatch": "nodemon --inspect-brk=9222 lib/index.js",
     "run": "node lib/index.js",
     "hotreload": "nodemon lib/index.js"
   },

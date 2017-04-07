@@ -4,7 +4,7 @@ var WebSocketServer = (require("websocket").server) as any;
 import * as http from "http";
 import generateUuid from "./util/UuidGenerator";
 
-var users: User[] = [];
+var users : any= {};
 var userCounter: number = 0;
 
 var server = http.createServer(function(request: any, response: any) {
@@ -48,10 +48,11 @@ wsServer.on('request', function(request: WebsocketRequest) {
   console.log((new Date()) + ' Connection accepted.');
 
   var userIndex: string = generateUuid();
-  users[userIndex as any]= new User(connection, userIndex);
+  users[userIndex] = new User(connection, userIndex);
   userCounter++;
 
   connection.on('close', function(reasonCode: string, description: string) {
     console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
+    delete users[userIndex];
   });
 });
