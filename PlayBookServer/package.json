@@ -25,6 +25,7 @@
     "inspectnobrk": "node --inspect=9222 lib/index.js"
   },
   "dependencies": {
+    "uuid": "^3.0.1",
     "websocket": "^1.0.24"
   },
   "devDependencies": {

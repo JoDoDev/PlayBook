@@ -1,6 +1,6 @@
 import {WebsocketRequest, WebsocketConnection, WebsocketMessage} from "./types/Websocket";
-import {User} from "./types/User";
-var WebSocketServer = <any>(require("websocket").server);
+import {User} from "./entity/User";
+var WebSocketServer = (require("websocket").server) as any;
 import * as http from "http";
 
 var users: User[] = [];

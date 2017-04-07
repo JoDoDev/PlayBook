@@ -1,4 +1,4 @@
-import {WebsocketConnection, WebsocketMessage} from "./Websocket";
+import {WebsocketConnection, WebsocketMessage} from "../types/Websocket";
 
 export class User{
   private sessionKey: string;
