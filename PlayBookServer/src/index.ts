@@ -1,7 +1,7 @@
 import {WebsocketRequest, WebsocketConnection, WebsocketMessage} from "./types/Websocket";
 import {User} from "./entity/User";
 var WebSocketServer = (require("websocket").server) as any;
-import * as http from "http";
+import * as http from 'http';
 import generateUuid from "./util/UuidGenerator";
 
 var users : any= {};
