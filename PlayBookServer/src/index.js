@@ -1,13 +1,12 @@
-import {WebsocketRequest, WebsocketConnection, WebsocketMessage} from "./types/Websocket";
-import {User} from "./entity/User";
-var WebSocketServer = (require("websocket").server) as any;
-import * as http from "http";
-import generateUuid from "./util/UuidGenerator";
+var User = require("./entity/User");
+var WebSocketServer = require("websocket").server;
+var http = require("http");
+const uuidV4 = require('uuid/v4');
 
-var users : any= {};
-var userCounter: number = 0;
+var users= {};
+var userCounter = 0;
 
-var server = http.createServer(function(request: any, response: any) {
+var server = http.createServer(function(request , response) {
   console.log((new Date()) + " Received request for " + request.url);
   response.writeHead(404);
   response.end();
@@ -26,12 +25,12 @@ var wsServer = new WebSocketServer({
   autoAcceptConnections: false
 });
 
-function originIsAllowed(origin: string) {
+function originIsAllowed(origin) {
   // put logic here to detect whether the specified origin is allowed.
   return true;
 }
 
-wsServer.on('request', function(request: WebsocketRequest) {
+wsServer.on('request', function(request) {
   if (!originIsAllowed(request.origin)) {
     // Make sure we only accept requests from an allowed origin
     request.reject();
@@ -44,14 +43,14 @@ wsServer.on('request', function(request: WebsocketRequest) {
     console.log((new Date()) + ' Connection rejected wrong protocol: ' + request.requestedProtocols);
     return;
   }
-  var connection: WebsocketConnection = request.accept('echo-protocol', request.origin);
+  var connection = request.accept('echo-protocol', request.origin);
   console.log((new Date()) + ' Connection accepted.');
 
-  var userIndex: string = generateUuid();
+  var userIndex = uuidV4();
   users[userIndex] = new User(connection, userIndex);
   userCounter++;
 
-  connection.on('close', function(reasonCode: string, description: string) {
+  connection.on('close', function(reasonCode, description) {
     console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
     delete users[userIndex];
   });

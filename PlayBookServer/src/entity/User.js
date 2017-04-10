@@ -1,20 +1,17 @@
-import {WebsocketConnection, WebsocketMessage} from "../types/Websocket";
 
-export class User{
-  private sessionKey: string;
-  private username: string;
-  private email: string;
-  private admin: boolean;
-  private connection: WebsocketConnection;
-  private userIndex: string;
-
-
-  constructor(connection: WebsocketConnection, userIndex: string){
+module.exports = class User {
+  constructor(connection, userIndex) {
     this.connection = connection;
     this.userIndex = userIndex;
+    this.sessionKey;
+    this.username;
+    this.email;
+    this.admin;
+    this.connection;
+    this.userIndex;
 
 
-    connection.on('message', function(message: WebsocketMessage) {
+    connection.on('message', function (message) {
       if (message.type === 'utf8') {
         console.log('Received Message: ' + message.utf8Data);
         connection.sendUTF(message.utf8Data);
@@ -25,4 +22,4 @@ export class User{
       }
     });
   }
-}
+};
