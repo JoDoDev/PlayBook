@@ -1,3 +1,4 @@
+"use strict";
 (async () => {
 const User = require("./entity/User");
 const WebSocketServer = require("websocket").server;

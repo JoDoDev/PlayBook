@@ -1,4 +1,6 @@
 "use strict";
+const AuthenticationHandler = require('../handlers/AuthenticationHandler');
+const MessageEmitter = require('../util/MessageEmitter')
 
 module.exports = class User {
   constructor(connection, userIndex) {
@@ -8,19 +10,26 @@ module.exports = class User {
     this.username;
     this.email;
     this.admin;
-    this.connection;
-    this.userIndex;
 
+    this.messageEmitter = new MessageEmitter();
+
+    this.authenticationhandler = new AuthenticationHandler(this);
 
     connection.on('message', function (message) {
       if (message.type === 'utf8') {
-        console.log('Received Message: ' + message.utf8Data);
-        connection.sendUTF(message.utf8Data);
-      }
-      else if (message.type === 'binary') {
-        console.log('Received Binary Message of ' + message.binaryData.length + ' bytes');
-        connection.sendBytes(message.binaryData);
+        let data = JSON.parse(message.utf8Data);
+        if (data.hasOwnProperty('type')) {
+          this.messageEmitter.emit(data.type, data);
+        }
       }
     });
+  }
+
+
+  sendUTF(data) {
+    if (typeof data === 'object') {
+      data = JSON.parse(data);
+    }
+    this.connection.sendUTF(data.utf8Data);
   }
 };
