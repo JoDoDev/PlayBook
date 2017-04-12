@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "promise-mysql": "^3.0.1",
+    "mysql": "^2.13.0",
     "uuid": "^3.0.1",
     "websocket": "^1.0.24"
   }

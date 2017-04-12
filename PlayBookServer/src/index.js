@@ -1,7 +1,9 @@
-var User = require("./entity/User");
-var WebSocketServer = require("websocket").server;
-var http = require("http");
+(async () => {
+const User = require("./entity/User");
+const WebSocketServer = require("websocket").server;
+const http = require("http");
 const uuidV4 = require('uuid/v4');
+
 
 var users= {};
 var userCounter = 0;
@@ -55,3 +57,9 @@ wsServer.on('request', function(request) {
     delete users[userIndex];
   });
 });
+
+
+
+
+
+})();

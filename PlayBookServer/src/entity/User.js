@@ -1,3 +1,4 @@
+"use strict";
 
 module.exports = class User {
   constructor(connection, userIndex) {

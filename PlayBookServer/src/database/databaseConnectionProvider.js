@@ -1,16 +1,34 @@
-var mysql = require('promise-mysql');
+"use strict";
+const mysql = require('mysql');
 
 
 const connectionOptions = {
   host: 'localhost',
-  user: 'sauron',
-  password: 'theonetruering',
-  database: 'mordor'
+  port: '3307',
+  user: 'root',
+  password: '',
+  database: 'playbook',
+  connectionLimit : 10
 };
 
-class databaseConnectionProvider{
-  private connection;
-  private connected;
 
+let DatabaseConnectionProvider = class DatabaseConnectionProvider {
+  constructor() {
+    this.pool  = mysql.createPool(connectionOptions);
+  }
 
-}
+  getConnection() {
+    return new Promise((fulfill, reject) => {
+      this.pool.getConnection(function(err, connection) {
+        if(err) {
+          reject(err);
+        } else {
+          fulfill(connection);
+        }
+      });
+    });
+  }
+};
+
+let databaseConnectionProvider = new DatabaseConnectionProvider();
+module.exports = databaseConnectionProvider;
