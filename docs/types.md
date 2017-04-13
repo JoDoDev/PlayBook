@@ -114,14 +114,38 @@ Client:
 Server:  
 
 [[SUCCESS]] type Boolean, Is true when Login credentials where right.  
-[[SESSIONKEY]] type String, Is an Empty String when Login credentials where false.
+[[EMAIL]] type String, Is an Empty String when Registration failed.
+[[USERNAME]] type String, Is an Empty String when Registration failed.
+[[SESSIONKEY]] type String, Is an Empty String when Registration failed.
+[[REASON]] type String, Is an Empty String when Registration went the right way.
 
 ```JSON
 {   
     "type": "REGISTER",  
     "data": {  
-        "success": "[[BOOLEAN]]",
-        "sessionKey": "[[SESSIONKEY]]"
+        "success": "[[SUCCESS]]",
+        "email": "[[EMAIL]]",
+        "username": "[[USERNAME]]",
+        "sessionKey": "[[SESSIONKEY]]",
+        "reason": "[[REASON]]"
     }  
+}
+```  
+
+Server Error:  
+
+[[TYPE]] type string, Example: "LOGIN_ERROR"  
+[[USERNAME]] type string, Is the username the user wanted to register.  
+[[PASSWORD]] type string, Is the password the user wanted to register.  
+[[CAUSE]] type string   
+
+```JSON
+{   
+    "type": "REGISTER_ERROR",
+    "data": {
+      "username": "[[USERNAME]]",
+      "password": "[[PASSWORD]]"
+    },
+    "cause": "[[CAUSE]]"
 }
 ```

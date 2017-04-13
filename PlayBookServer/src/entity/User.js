@@ -7,10 +7,12 @@ module.exports = class User {
   constructor(connection, userIndex) {
     this.connection = connection;
     this.userIndex = userIndex;
-    this.sessionKey;
-    this.username;
-    this.email;
-    this.admin;
+    this.sessionKey = "";
+    this.username = "";
+    this.email = "";
+    this.admin = 0;
+    this.userId = -1;
+    this.loggedIn = false;
 
     this.messageEmitter = new EventEmitter();
 
