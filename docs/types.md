@@ -18,7 +18,8 @@ Server ->
 {   
     type: "LOGIN",  
     data: {  
-        success: [[BOOLEN]] //True if Sucsess
+        success: [[BOOLEN]], //True if Sucsess
+        sessionKey: [[SESSIONKEY]] // Empty string if False
     }  
 }
 ```
