@@ -1,10 +1,18 @@
-# PlayBook
-## Types
-
-
+# PlayBook Types
 
 #### Defaults
-Client ->  
+When there is nothing special in the error object  
+it doesn't need to be written.  
+
+Client:  
+```
+{   
+    type: [[TYPE]],  
+    data: { [[DATA]] }  
+}
+```  
+
+Server:  
 ```
 {   
     type: [[TYPE]],  
@@ -12,15 +20,7 @@ Client ->
 }
 ```
 
-Server ->  
-```
-{   
-    type: [[TYPE]],  
-    data: { [[DATA]] }  
-}
-```
-
-Error ->
+Error:
 ```
 {   
     type: [[TYPE]] + "_ERROR",  // Example: "LOGIN_ERROR"
@@ -31,7 +31,7 @@ Error ->
 
 
 #### LOGIN
-Client ->  
+Client:
 ```
 {   
     type: "LOGIN",  
@@ -42,13 +42,37 @@ Client ->
 }
 ```
 
-Server ->  
+Server:
 ```
 {   
     type: "LOGIN",  
     data: {  
         success: [[BOOLEN]], //True if Sucsess
-        sessionKey: [[SESSIONKEY]] // Empty string if False
+        sessionKey: [[SESSIONKEY]] // Empty string if success False
+    }  
+}
+```
+
+#### REGISTER
+Client:
+```
+{   
+    type: "REGISTER",  
+    data: {
+        email: [[EMAIL]],
+        username: [[USERNAME]],
+        password: [[PASSWORD]]  
+    }  
+}
+```
+
+Server:
+```
+{   
+    type: "REGISTER",  
+    data: {  
+        success: [[BOOLEN]], //True if Sucsess
+        sessionKey: [[SESSIONKEY]] // Empty string if success False
     }  
 }
 ```
