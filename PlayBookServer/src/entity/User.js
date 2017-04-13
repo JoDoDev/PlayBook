@@ -1,5 +1,5 @@
 "use strict";
-const AuthenticationHandler = require('../handlers/AuthenticationHandler');
+const AuthenticationHandler = require('../handlers/AuthenticationHandler/AuthenticationHandler');
 const MessageEmitter = require('../util/MessageEmitter')
 
 module.exports = class User {
