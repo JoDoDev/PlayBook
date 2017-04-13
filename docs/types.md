@@ -5,33 +5,50 @@ When there is nothing special in the error object
 it doesn't need to be written.  
 
 Client:  
-```JSON
-{   
-    type: [[TYPE]],  
-    data: { [[DATA]] }  
-}
-```  
+  
+[[TYPE]] type string  
+[[DATA]] type object
 
-Server:  
 ```JSON
 {   
     "type": "[[TYPE]]",  
-    "data": "[[DATA]]" // musst be an Object
+    "data": "[[DATA]]"  
 }
 ```
 
-Error:
+Server:  
+
+[[TYPE]] type string  
+[[DATA]] type object  
+
 ```JSON
 {   
-    "type": "[[TYPE]] + _ERROR",  // Example: "LOGIN_ERROR"
-    "data": "[[DATA]]", // musst be an Object
-    "cause": "[[CAUSE]]" // Simple cause
+    "type": "[[TYPE]]",  
+    "data": "[[DATA]]"
+}
+```
+
+Error:  
+
+[[TYPE]] type string, Example: "LOGIN_ERROR"  
+[[DATA]] type object   
+[[CAUSE]] type string   
+
+```JSON
+{   
+    "type": "[[TYPE]] + _ERROR",
+    "data": "[[DATA]]",
+    "cause": "[[CAUSE]]"
 }
 ```
 
 
 #### LOGIN
-Client:
+Client:  
+
+[[USERNAME]] type String or Number, Can also be Email   
+[[PASSWORD]] type String or Number  
+  
 ```JSON
 {   
     "type": "LOGIN",  
@@ -42,13 +59,17 @@ Client:
 }
 ```
 
-Server:
+Server:  
+
+[[SUCCESS]] type Boolean, Is true when Login credentials where right.  
+[[SESSIONKEY]] type String, Is an Empty String when Login credentials where false.
+
 ```JSON
 {   
     "type": "LOGIN",  
     "data": {  
-        "success": "[[BOOLEN]]", //True if Sucsess
-        "sessionKey": "[[SESSIONKEY]]" // Empty string if success False
+        "success": "[[SUCCESS]]",
+        "sessionKey": "[[SESSIONKEY]]"
     }  
 }
 ```
@@ -66,13 +87,17 @@ Client:
 }
 ```
 
-Server:
+Server:  
+
+[[SUCCESS]] type Boolean, Is true when Login credentials where right.  
+[[SESSIONKEY]] type String, Is an Empty String when Login credentials where false.
+
 ```JSON
 {   
     "type": "REGISTER",  
     "data": {  
-        "success": "[[BOOLEN]]",  //True if Sucsess 
-        "sessionKey": "[[SESSIONKEY]]" // Empty string if success False
+        "success": "[[BOOLEN]]",
+        "sessionKey": "[[SESSIONKEY]]"
     }  
 }
 ```
