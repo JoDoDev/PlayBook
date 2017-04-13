@@ -1,3 +1,19 @@
-<p>
-  register works!
-</p>
+<md-card class="register">
+  <h3>Registrierung</h3>
+  <hr>
+  <md-card-content>
+    <md-input-container class="full-width-input">
+      <input mdInput placeholder="Benutzername">
+    </md-input-container>
+    <md-input-container class="full-width-input">
+      <input mdInput placeholder="E-Mail">
+    </md-input-container>
+    <md-input-container class="full-width-input">
+      <input mdInput type="password" placeholder="Passwort">
+    </md-input-container>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button class="button-register">Registrieren</button>
+    <button md-button routerLink='/login'>Login</button>
+  </md-card-actions>
+</md-card>

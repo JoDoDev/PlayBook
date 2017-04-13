@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [`
     .login{
       width: 30%;
-      margin: 0 auto;
+      margin: 160px auto;
     }
     .button-login {
       background-color: #2196F3;

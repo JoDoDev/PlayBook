@@ -4,7 +4,8 @@ import {HomeComponent} from "./site/home/home.component";
 import {RegisterComponent} from "./site/register/register.component";
 
 const APP_ROUTES: Routes = [
-  { path: '', component: LoginComponent  },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent }
 ];
