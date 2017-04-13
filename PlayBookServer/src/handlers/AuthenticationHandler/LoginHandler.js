@@ -14,6 +14,9 @@ module.exports = class LoginHandler {
           qResult = await databaseHelper.checkUsernameAndPassword(data.data.username, data.data.password);
           let success = qResult["0"].success;
           let userId = qResult["0"].userId;
+          let username = qResult["0"].username;
+          let email = qResult["0"].email;
+
           let sessionKey = "";
           if (success === 'true') {
             sessionKey = uuidV4();
@@ -23,7 +26,9 @@ module.exports = class LoginHandler {
             type: "LOGIN",
             data: {
               success: success,
-              sessionKey: sessionKey
+              sessionKey: sessionKey,
+              username: username,
+              email: email
             }
           };
           this.user.sendUTF(ReturnObject);

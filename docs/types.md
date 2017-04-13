@@ -77,6 +77,8 @@ Client:
 Server:  
 
 [[SUCCESS]] type Boolean, Is true when Login credentials where right.  
+[[EMAIL]] type String, Is an Empty String when Login credentials where false.
+[[USERNAME]] type String, Is an Empty String when Login credentials where false.
 [[SESSIONKEY]] type String, Is an Empty String when Login credentials where false.
 
 ```JSON
@@ -84,6 +86,8 @@ Server:
     "type": "LOGIN",  
     "data": {  
         "success": "[[SUCCESS]]",
+        "email": "[[EMAIL]]",
+        "username": "[[USERNAME]]",
         "sessionKey": "[[SESSIONKEY]]"
     }  
 }

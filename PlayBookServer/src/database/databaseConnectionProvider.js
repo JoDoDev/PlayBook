@@ -14,7 +14,7 @@ const connectionOptions = {
 
 let DatabaseConnectionProvider = class DatabaseConnectionProvider {
   constructor() {
-    this.pool  = mysql.createPool(connectionOptions);
+    this.pool = mysql.createPool(connectionOptions);
   }
 
   getConnection() {
