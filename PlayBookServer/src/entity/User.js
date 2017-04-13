@@ -18,9 +18,19 @@ module.exports = class User {
 
     connection.on('message', (message) => {
       if (message.type === 'utf8') {
-        let data = JSON.parse(message.utf8Data);
-        if (data.hasOwnProperty('type')) {
-          this.messageEmitter.emit(data.type, data);
+        try {
+          let data = JSON.parse(message.utf8Data);
+          if (data.hasOwnProperty('type')) {
+            this.messageEmitter.emit(data.type, data);
+          }
+        } catch (e) {
+          if (e instanceof SyntaxError) {
+            this.sendUTF({
+              "type": "JSON_SYNTAX_ERROR",
+              "data": {},
+              "cause": "Could not Transform data into Object"
+            });
+          }
         }
       }
     });

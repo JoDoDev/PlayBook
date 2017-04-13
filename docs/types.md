@@ -1,8 +1,8 @@
 # PlayBook Types
 
 #### Defaults
-When there is nothing special in the error object  
-it doesn't need to be written.  
+When there is nothing special in the Error Object  
+it does not need to be written.  
 
 Client:  
   
@@ -42,6 +42,21 @@ Error:
 }
 ```
 
+## Special
+
+#### JSON_SYNTAX_ERROR
+
+Server:  
+  
+```JSON
+{   
+    "type": "JSON_SYNTAX_ERROR",
+    "data": {},
+    "cause": "Could not Transform data into Object"
+}
+```
+
+## Normal   
 
 #### LOGIN
 Client:  
@@ -74,7 +89,12 @@ Server:
 }
 ```
 
-#### REGISTER
+#### REGISTER  
+  
+[[EMAIL]] type string  
+[[USERNAME]] type string  
+[[PASSWORD]] type string  
+  
 Client:
 ```JSON
 {   
@@ -96,7 +116,7 @@ Server:
 {   
     "type": "REGISTER",  
     "data": {  
-        "success": "[[BOOLEN]]",
+        "success": "[[BOOLEAN]]",
         "sessionKey": "[[SESSIONKEY]]"
     }  
 }
