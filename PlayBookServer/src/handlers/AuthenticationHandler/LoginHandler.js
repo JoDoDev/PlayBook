@@ -11,7 +11,15 @@ module.exports = class LoginHandler {
         if(data.hasOwnProperty("data") && typeof data === 'object' && data.data !== null && data.data.hasOwnProperty("username") && data.data.hasOwnProperty("password")) {
           // Check if the username and password are of accepted types
           if(typeof data.data.username !== 'string' && typeof data.data.username !== 'number' && typeof data.data.password !== 'string' || typeof data.data.password !== 'number' ){
-            let result = await databaseHelper.login(data.data.username, data.data.password);
+            let qResult = await databaseHelper.login(data.data.username, data.data.password);
+            let result = qResult["0"].success;
+            let ReturnObject = {
+              type: "LOGIN",
+              data: {
+                success: result
+              }
+            };
+            this.user.sendUTF(ReturnObject);
           }
         }
       });

@@ -18,7 +18,7 @@ Server ->
 {   
     type: "LOGIN",  
     data: {  
-        sucsess: [[BOOLEN]] //True if Sucsess
+        success: [[BOOLEN]] //True if Sucsess
     }  
 }
 ```

@@ -1,6 +1,7 @@
 "use strict";
 const AuthenticationHandler = require('../handlers/AuthenticationHandler/AuthenticationHandler');
 const MessageEmitter = require('../util/MessageEmitter')
+const EventEmitter = require('events');
 
 module.exports = class User {
   constructor(connection, userIndex) {
@@ -11,11 +12,11 @@ module.exports = class User {
     this.email;
     this.admin;
 
-    this.messageEmitter = new MessageEmitter();
+    this.messageEmitter = new EventEmitter();
 
     this.authenticationhandler = new AuthenticationHandler(this);
 
-    connection.on('message', function (message) {
+    connection.on('message', (message) => {
       if (message.type === 'utf8') {
         let data = JSON.parse(message.utf8Data);
         if (data.hasOwnProperty('type')) {
@@ -28,8 +29,8 @@ module.exports = class User {
 
   sendUTF(data) {
     if (typeof data === 'object') {
-      data = JSON.parse(data);
+      data = JSON.stringify(data);
     }
-    this.connection.sendUTF(data.utf8Data);
+    this.connection.sendUTF(data);
   }
 };

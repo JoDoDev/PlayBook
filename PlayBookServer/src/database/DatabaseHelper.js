@@ -6,7 +6,7 @@ let DatabaseHelper = class DatabaseHelper {
   async login(username, password) {
     try {
       let dbConn = await databaseConnectionProvider.getConnection();
-      let sqlPrepare = 'SELECT ( CASE WHEN COUNT(*) = 1 THEN "true" ELSE "false" END) AS "sucsess" from `user` WHERE `email` = ? AND `password` = ? OR `username` = ? AND `password` = ?';
+      let sqlPrepare = 'SELECT ( CASE WHEN COUNT(*) = 1 THEN "true" ELSE "false" END) AS "success" from `user` WHERE `email` = ? AND `password` = ? OR `username` = ? AND `password` = ?';
       let inserts = [username, password, username, password];
       let results = await this.makeQuery(sqlPrepare, inserts, dbConn);
       return results;
