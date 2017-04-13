@@ -76,16 +76,14 @@ Client:
 
 Server:  
 
-[[SUCCESS]] type Boolean, Is true when Login credentials where right.  
-[[EMAIL]] type String, Is an Empty String when Login credentials where false.
-[[USERNAME]] type String, Is an Empty String when Login credentials where false.
-[[SESSIONKEY]] type String, Is an Empty String when Login credentials where false.
-
+[[EMAIL]] type String, Is an Empty String when Login credentials where false.  
+[[USERNAME]] type String, Is an Empty String when Login credentials where false.  
+[[SESSIONKEY]] type String, Is an Empty String when Login credentials where false.  
+  
 ```JSON
 {   
     "type": "LOGIN",  
     "data": {  
-        "success": "[[SUCCESS]]",
         "email": "[[EMAIL]]",
         "username": "[[USERNAME]]",
         "sessionKey": "[[SESSIONKEY]]"
@@ -93,13 +91,30 @@ Server:
 }
 ```
 
+Server Error:  
+  
+[[USERNAME]] type string, Is the username the user wanted to login. can be empty string if object is has wrong properties.   
+[[EMAIL]] type string, Is the email the user wanted to login. can be empty string if object is has wrong properties.  
+[[CAUSE]] type string   
+
+```JSON
+{   
+    "type": "REGISTER_ERROR",
+    "data": {
+      "username": "[[USERNAME]]"
+    },
+    "cause": "[[CAUSE]]"
+}
+```
+
 #### REGISTER  
   
+Client:  
+
 [[EMAIL]] type string  
 [[USERNAME]] type string  
 [[PASSWORD]] type string  
   
-Client:
 ```JSON
 {   
     "type": "REGISTER",  
@@ -112,39 +127,36 @@ Client:
 ```
 
 Server:  
-
-[[SUCCESS]] type Boolean, Is true when Login credentials where right.  
-[[EMAIL]] type String, Is an Empty String when Registration failed.
-[[USERNAME]] type String, Is an Empty String when Registration failed.
-[[SESSIONKEY]] type String, Is an Empty String when Registration failed.
-[[REASON]] type String, Is an Empty String when Registration went the right way.
+  
+[[SUCCESS]] type Boolean, Is true when Login credentials where right.    
+[[EMAIL]] type String, Is an Empty String when Registration failed.  
+[[USERNAME]] type String, Is an Empty String when Registration failed.  
+[[SESSIONKEY]] type String, Is an Empty String when Registration failed.  
+[[REASON]] type String, Is an Empty String when Registration went the right way.  
 
 ```JSON
 {   
     "type": "REGISTER",  
     "data": {  
-        "success": "[[SUCCESS]]",
         "email": "[[EMAIL]]",
         "username": "[[USERNAME]]",
-        "sessionKey": "[[SESSIONKEY]]",
-        "reason": "[[REASON]]"
+        "sessionKey": "[[SESSIONKEY]]"
     }  
 }
 ```  
 
 Server Error:  
-
-[[TYPE]] type string, Example: "LOGIN_ERROR"  
-[[USERNAME]] type string, Is the username the user wanted to register.  
-[[PASSWORD]] type string, Is the password the user wanted to register.  
+  
+[[USERNAME]] type string, Is the username the user wanted to register. can be empty string if object is has wrong properties.  
+[[EMAIL]] type string, Is the email the user wanted to register. can be empty string if object is has wrong properties.  
 [[CAUSE]] type string   
-
+  
 ```JSON
 {   
     "type": "REGISTER_ERROR",
     "data": {
       "username": "[[USERNAME]]",
-      "password": "[[PASSWORD]]"
+      "email": "[[EMAIL]]"
     },
     "cause": "[[CAUSE]]"
 }

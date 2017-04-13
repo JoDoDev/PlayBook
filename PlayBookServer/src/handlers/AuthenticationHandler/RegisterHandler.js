@@ -26,15 +26,15 @@ module.exports = class RegisterHandler {
             user.loggedIn = true;
 
 
-            this.user.sendUTF(this.getReturnObject('true', sessionKey, data.data.username, data.data.email, ""));
+            this.user.sendUTF(this.getReturnObject(sessionKey, data.data.username, data.data.email));
           } else {
             this.user.sendUTF(this.getErrorReturnObject(data.data.username, data.data.email, "Could not save user to Database"));
           }
         } else {
-          this.user.sendUTF(this.getReturnObject('false', "", data.data.username, data.data.email, "User with this credential already exists"));
+          this.user.sendUTF(this.getErrorReturnObject(data.data.username, data.data.email, "User with this credential already exists"));
         }
       } else {
-        this.user.sendUTF(this.getReturnObject('false', "", "", "", "Object does not have the needed properties"));
+        this.user.sendUTF(this.getErrorReturnObject("", "", "Object does not have the needed properties"));
       }
     });
   }
@@ -59,25 +59,23 @@ module.exports = class RegisterHandler {
     return false;
   }
 
-  getReturnObject(success, sessionKey, username, email, reason = "") {
+  getReturnObject(sessionKey, username, email) {
     return {
       type: "REGISTER",
       data: {
-        success: success,
         sessionKey: sessionKey,
         username: username,
         email: email,
-        reason: reason,
       }
     };
   }
 
-  getErrorReturnObject(username, password, cause) {
+  getErrorReturnObject(username, email, cause) {
     return {
       type: "REGISTER_ERROR",
       data: {
         username: username,
-        password: password
+        email: email
       },
       cause: cause
     };
