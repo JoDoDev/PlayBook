@@ -7,8 +7,7 @@ module.exports = async function getIdOfUser (uniqueKey) {
     let dbConn = await databaseConnectionProvider.getConnection();
     let sqlPrepare = 'SELECT userId FROM user WHERE username = ? OR email = ?';
     let inserts = [uniqueKey, uniqueKey];
-    let res =  await makeQuery(sqlPrepare, inserts, dbConn);
-    return res;
+    return await makeQuery(sqlPrepare, inserts, dbConn);
   } catch (e) {
     console.error(e);
   }

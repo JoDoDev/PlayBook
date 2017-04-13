@@ -26,18 +26,20 @@ module.exports = class RegisterHandler {
             user.loggedIn = true;
 
 
-            this.user.sendUTF(this.getReturnObject(sessionKey, data.data.username, data.data.email));
+            this.user.sendUTF(RegisterHandler.getReturnObject(sessionKey, data.data.username, data.data.email));
           } else {
-            this.user.sendUTF(this.getErrorReturnObject(data.data.username, data.data.email, "Could not save user to Database"));
+            this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "Could not save user to Database"));
           }
         } else {
-          this.user.sendUTF(this.getErrorReturnObject(data.data.username, data.data.email, "User with this credential already exists"));
+          this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "User with this credential already exists"));
         }
       } else {
-        this.user.sendUTF(this.getErrorReturnObject("", "", "Object does not have the needed properties"));
+        this.user.sendUTF(RegisterHandler.getErrorReturnObject("", "", "Object does not have the needed properties"));
       }
     });
   }
+
+
 
   static hasProperties(data) {
     // Check if data object has the needed values
@@ -59,7 +61,7 @@ module.exports = class RegisterHandler {
     return false;
   }
 
-  getReturnObject(sessionKey, username, email) {
+  static getReturnObject(sessionKey, username, email) {
     return {
       type: "REGISTER",
       data: {
@@ -70,7 +72,7 @@ module.exports = class RegisterHandler {
     };
   }
 
-  getErrorReturnObject(username, email, cause) {
+  static getErrorReturnObject(username, email, cause) {
     return {
       type: "REGISTER_ERROR",
       data: {

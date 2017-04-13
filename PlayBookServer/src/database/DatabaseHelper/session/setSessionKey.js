@@ -7,8 +7,7 @@ module.exports = async function setSessionKey (userId, SessionKey) {
     let dbConn = await databaseConnectionProvider.getConnection();
     let sqlPrepare = 'INSERT INTO `session`(`fk_user`, `sessionKey`) VALUES (?, ?)';
     let inserts = [userId, SessionKey];
-    let res = await makeQuery(sqlPrepare, inserts, dbConn);
-    return res;
+    return await makeQuery(sqlPrepare, inserts, dbConn);
   } catch (e) {
     console.error(e);
   }

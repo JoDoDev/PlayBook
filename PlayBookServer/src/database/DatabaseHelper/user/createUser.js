@@ -8,8 +8,7 @@ module.exports = async function createUser (username, email, password) {
     let dbConn = await databaseConnectionProvider.getConnection();
     let sqlPrepare = 'INSERT INTO `user`(`email`, `password`, `username`) VALUES (?, ?, ?)';
     let inserts = [email, password, username];
-    let res = await makeQuery(sqlPrepare, inserts, dbConn);
-    return res;
+    return await makeQuery(sqlPrepare, inserts, dbConn);
   } catch (e) {
     console.error(e);
   }
