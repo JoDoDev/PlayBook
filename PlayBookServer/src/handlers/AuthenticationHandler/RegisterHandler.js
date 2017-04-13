@@ -10,6 +10,10 @@ module.exports = class RegisterHandler {
     this.user.messageEmitter.on("REGISTER",async (data) => {
       if (RegisterHandler.hasProperties(data)) {
         if(!(await doesUserExist.doesUserExistWithUsernameOrEmail(data.data.username, data.data.email))) {
+          if(!RegisterHandler.isUserInputCorrect(data.data.username, data.data.email, data.data.password)) {
+            this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "User Inputs are Wrong"));
+            return;
+          }
           let qResult;
 
           await databaseHelper.createUser(data.data.username, data.data.email, data.data.password);
@@ -39,7 +43,15 @@ module.exports = class RegisterHandler {
     });
   }
 
-
+  static isUserInputCorrect(username, email, password) {
+    if(username.length >= 3 && password.length >= 3) {
+      let emailRegex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])+";
+      if(emailRegex.test(email)) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   static hasProperties(data) {
     // Check if data object has the needed values
