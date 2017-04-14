@@ -161,3 +161,35 @@ Server Error:
     "cause": "[[CAUSE]]"
 }
 ```
+
+#### LOGOUT
+Client:  
+
+  
+```JSON
+{   
+    "type": "LOGOUT",  
+    "data": {}  
+}
+```
+
+Server:   
+  
+```JSON
+{   
+    "type": "LOGOUT",  
+    "data": {}  
+}
+```
+
+Server Error:  
+   
+[[CAUSE]] type string, Example: "you are not logged in"   
+
+```JSON
+{   
+    "type": "REGISTER_ERROR",
+    "data": {},
+    "cause": "[[CAUSE]]"
+}
+```

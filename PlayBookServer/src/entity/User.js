@@ -6,12 +6,7 @@ module.exports = class User {
   constructor(connection, userIndex) {
     this.connection = connection;
     this.userIndex = userIndex;
-    this.sessionKey = "";
-    this.username = "";
-    this.email = "";
-    this.admin = 0;
-    this.userId = -1;
-    this.loggedIn = false;
+    this.setInitialData();
 
     this.messageEmitter = new MessageEmitter();
 
@@ -48,5 +43,14 @@ module.exports = class User {
       data = JSON.stringify(data);
     }
     this.connection.sendUTF(data);
+  }
+
+  setInitialData() {
+    this.sessionKey = "";
+    this.username = "";
+    this.email = "";
+    this.admin = 0;
+    this.userId = -1;
+    this.loggedIn = false;
   }
 };
