@@ -1,7 +1,6 @@
 "use strict";
 const AuthenticationHandler = require('../handlers/AuthenticationHandler/AuthenticationHandler');
-const MessageEmitter = require('../util/MessageEmitter')
-const EventEmitter = require('events');
+const MessageEmitter = require('../util/MessageEmitter');
 
 module.exports = class User {
   constructor(connection, userIndex) {
@@ -14,7 +13,7 @@ module.exports = class User {
     this.userId = -1;
     this.loggedIn = false;
 
-    this.messageEmitter = new EventEmitter();
+    this.messageEmitter = new MessageEmitter();
 
     this.authenticationhandler = new AuthenticationHandler(this);
 
@@ -35,6 +34,11 @@ module.exports = class User {
           }
         }
       }
+    });
+
+
+    connection.on('close', () => {
+      this.messageEmitter.removeAllListeners();
     });
   }
 

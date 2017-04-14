@@ -4,6 +4,7 @@ const User = require("./entity/User");
 const WebSocketServer = require("websocket").server;
 const http = require("http");
 const uuidV4 = require('uuid/v4');
+const serverInformationEmitter = require("./util/serverInformationEmitter");
 
 
 var users= {};
