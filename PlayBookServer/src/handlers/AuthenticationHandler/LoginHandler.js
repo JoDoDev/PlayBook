@@ -10,6 +10,10 @@ module.exports = class LoginHandler {
 
       this.user.messageEmitter.on("LOGIN",async (data) => {
         if(LoginHandler.hasProperties(data)) {
+          if (this.user.loggedIn === true) {
+            this.user.sendUTF(LoginHandler.getErrorReturnObject(data.data.username, "You are already logged in"));
+            return;
+          }
           let qResult;
           qResult = await databaseHelper.checkUsernameAndPassword(data.data.username, data.data.password);
           let success = qResult["0"].success;

@@ -9,6 +9,10 @@ module.exports = class RegisterHandler {
 
     this.user.messageEmitter.on("REGISTER",async (data) => {
       if (RegisterHandler.hasProperties(data)) {
+        if (this.user.loggedIn === true) {
+          this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username,  data.data.email, "You are already logged in"));
+          return;
+        }
         if(!(await doesUserExist.doesUserExistWithUsernameOrEmail(data.data.username, data.data.email))) {
           if(!RegisterHandler.isUserInputCorrect(data.data.username, data.data.email, data.data.password)) {
             this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "User Inputs are Wrong"));
