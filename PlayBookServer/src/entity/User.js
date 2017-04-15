@@ -1,4 +1,5 @@
 "use strict";
+const userService = require("../services/UserService");
 const AuthenticationHandler = require('../handlers/AuthenticationHandler/AuthenticationHandler');
 const MessageEmitter = require('../util/MessageEmitter');
 
@@ -34,6 +35,7 @@ module.exports = class User {
 
     connection.on('close', () => {
       this.messageEmitter.removeAllListeners();
+      userService.deleteUser(this.userIndex);
     });
   }
 

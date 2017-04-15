@@ -1,16 +1,21 @@
 "use strict";
 
 
-module.exports = class LoginHandler {
+module.exports = class LogoutHandler {
     constructor(user) {
       this.user = user;
 
       this.user.messageEmitter.on("LOGOUT",async (data) => {
-        if (this.user.loggedIn === false) {
-          this.user.sendUTF(LoginHandler.getErrorReturnObject("You are not logged in"));
-        } else {
-          this.user.setInitialData();
-          this.user.sendUTF(LoginHandler.getReturnObject());
+        try {
+          if (this.user.loggedIn === false) {
+            this.user.sendUTF(LogoutHandler.getErrorReturnObject("You are not logged in"));
+          } else {
+            this.user.setInitialData();
+            this.user.sendUTF(LogoutHandler.getReturnObject());
+          }
+        } catch (e) {
+          console.error("LOGOUT", e);
+          this.user.sendUTF(LogoutHandler.getErrorReturnObject("Unexpected Error occurred"));
         }
       });
     }

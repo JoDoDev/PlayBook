@@ -8,41 +8,47 @@ module.exports = class RegisterHandler {
     this.user = user;
 
     this.user.messageEmitter.on("REGISTER",async (data) => {
-      if (RegisterHandler.hasProperties(data)) {
-        if (this.user.loggedIn === true) {
-          this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username,  data.data.email, "You are already logged in"));
-          return;
-        }
-        if(!(await DoesUserExist.doesUserExistWithUsernameOrEmail(data.data.username, data.data.email))) {
-          if(!RegisterHandler.isUserInputCorrect(data.data.username, data.data.email, data.data.password)) {
-            this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "User Inputs are Wrong"));
+      try {
+        if (RegisterHandler.hasProperties(data)) {
+          if (this.user.loggedIn === true) {
+            this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "You are already logged in"));
             return;
           }
-          let qResult;
+          if (!(await DoesUserExist.doesUserExistWithUsernameOrEmail(data.data.username, data.data.email))) {
+            if (!RegisterHandler.isUserInputCorrect(data.data.username, data.data.email, data.data.password)) {
+              this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "User Inputs are Wrong"));
+              return;
+            }
+            let qResult;
 
-          await DatabaseHelper.createUser(data.data.username, data.data.email, data.data.password);
-          qResult = await DatabaseHelper.getIdOfUser(data.data.username);
-          let userId = qResult[0].userId;
+            await DatabaseHelper.createUser(data.data.username, data.data.email, data.data.password);
+            qResult = await DatabaseHelper.getIdOfUser(data.data.username);
+            let userId = qResult[0].userId;
 
-          if (typeof userId === 'number') {
-            let sessionKey = uuidV4();
-            await DatabaseHelper.setSessionKey(userId, sessionKey);
-            user.sessionKey = sessionKey;
-            user.username = data.data.username;
-            user.email = data.data.email;
-            user.userId = userId;
-            user.loggedIn = true;
+            if (typeof userId === 'number') {
+              let sessionKey = uuidV4();
+              await DatabaseHelper.setSessionKey(userId, sessionKey);
+              user.sessionKey = sessionKey;
+              user.username = data.data.username;
+              user.email = data.data.email;
+              user.userId = userId;
+              user.loggedIn = true;
 
 
-            this.user.sendUTF(RegisterHandler.getReturnObject(sessionKey, data.data.username, data.data.email));
+              this.user.sendUTF(RegisterHandler.getReturnObject(sessionKey, data.data.username, data.data.email));
+            } else {
+              this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "Could not save user to Database"));
+            }
           } else {
-            this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "Could not save user to Database"));
+            this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "User with this credential already exists"));
           }
         } else {
-          this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "User with this credential already exists"));
+          this.user.sendUTF(RegisterHandler.getErrorReturnObject("", "", "Object does not have the needed properties"));
         }
-      } else {
-        this.user.sendUTF(RegisterHandler.getErrorReturnObject("", "", "Object does not have the needed properties"));
+      } catch (e) {
+        console.error("REGISTER");
+        console.error(e);
+        this.user.sendUTF(RegisterHandler.getErrorReturnObject("", "", "Unexpected Error occurred"));
       }
     });
   }

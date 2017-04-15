@@ -6,10 +6,15 @@ module.exports = class DoesUsernameExistHandler {
     this.user = user;
 
     this.user.messageEmitter.on("DOES_USERNAME_EXIST",async (data) => {
-      if (DoesUsernameExistHandler.hasProperties(data)) {
-        this.user.sendUTF(DoesUsernameExistHandler.getReturnObject(data.data.username, await DoesUserExist.doesUsernameExist(data.data.username)));
-      } else {
-        this.user.sendUTF(DoesUsernameExistHandler.getErrorReturnObject("Object does not have the needed properties"));
+      try {
+        if (DoesUsernameExistHandler.hasProperties(data)) {
+          this.user.sendUTF(DoesUsernameExistHandler.getReturnObject(data.data.username, await DoesUserExist.doesUsernameExist(data.data.username)));
+        } else {
+          this.user.sendUTF(DoesUsernameExistHandler.getErrorReturnObject("Object does not have the needed properties"));
+        }
+      } catch (e) {
+        console.error("DOES_USERNAME_EXIST", e);
+        this.user.sendUTF(DoesUsernameExistHandler.getErrorReturnObject("Unexpected Error occurred"));
       }
     });
   }

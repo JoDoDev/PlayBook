@@ -1,6 +1,5 @@
 "use strict";
 const EventEmitter = require('events');
-process.stdin.resume();//so the program will not close instantly
 
 let ServerInformationEmitter = class ServerInformationEmitter extends EventEmitter {
 };

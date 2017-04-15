@@ -6,10 +6,15 @@ module.exports = class DoesEmailExistHandler {
     this.user = user;
 
     this.user.messageEmitter.on("DOES_EMAIL_EXIST",async (data) => {
-      if (DoesEmailExistHandler.hasProperties(data)) {
-        this.user.sendUTF(DoesEmailExistHandler.getReturnObject(data.data.email, await DoesUserExist.doesEmailExist(data.data.email)));
-      } else {
-        this.user.sendUTF(DoesEmailExistHandler.getErrorReturnObject("Object does not have the needed properties"));
+      try {
+        if (DoesEmailExistHandler.hasProperties(data)) {
+          this.user.sendUTF(DoesEmailExistHandler.getReturnObject(data.data.email, await DoesUserExist.doesEmailExist(data.data.email)));
+        } else {
+          this.user.sendUTF(DoesEmailExistHandler.getErrorReturnObject("Object does not have the needed properties"));
+        }
+      } catch (e) {
+        console.error("DOES_EMAIL_EXIST", e);
+        this.user.sendUTF(DoesEmailExistHandler.getErrorReturnObject("Unexpected Error occurred"));
       }
     });
   }

@@ -9,34 +9,39 @@ module.exports = class LoginHandler {
       this.user = user;
 
       this.user.messageEmitter.on("LOGIN",async (data) => {
-        if(LoginHandler.hasProperties(data)) {
-          if (this.user.loggedIn === true) {
-            this.user.sendUTF(LoginHandler.getErrorReturnObject(data.data.username, "You are already logged in"));
-            return;
-          }
-          let qResult;
-          qResult = await DatabaseHelper.checkUsernameAndPassword(data.data.username, data.data.password);
-          let success = qResult["0"].success;
-          let userId = qResult["0"].userId;
-          let username = (qResult["0"].username !== null)? qResult["0"].username: "";
-          let email = (qResult["0"].email !== null)? qResult["0"].email: "";
+        try {
+          if (LoginHandler.hasProperties(data)) {
+            if (this.user.loggedIn === true) {
+              this.user.sendUTF(LoginHandler.getErrorReturnObject(data.data.username, "You are already logged in"));
+              return;
+            }
+            let qResult;
+            qResult = await DatabaseHelper.checkUsernameAndPassword(data.data.username, data.data.password);
+            let success = qResult["0"].success;
+            let userId = qResult["0"].userId;
+            let username = (qResult["0"].username !== null) ? qResult["0"].username : "";
+            let email = (qResult["0"].email !== null) ? qResult["0"].email : "";
 
-          let sessionKey = "";
-          if (success === 'true') {
-            sessionKey = uuidV4();
-            await DatabaseHelper.setSessionKey(userId, sessionKey);
-            user.sessionKey = sessionKey;
-            user.username = username;
-            user.email = email;
-            user.userId = userId;
-            user.loggedIn = true;
+            let sessionKey = "";
+            if (success === 'true') {
+              sessionKey = uuidV4();
+              await DatabaseHelper.setSessionKey(userId, sessionKey);
+              user.sessionKey = sessionKey;
+              user.username = username;
+              user.email = email;
+              user.userId = userId;
+              user.loggedIn = true;
 
-            this.user.sendUTF(LoginHandler.getReturnObject(sessionKey, username, email));
+              this.user.sendUTF(LoginHandler.getReturnObject(sessionKey, username, email));
+            } else {
+              this.user.sendUTF(LoginHandler.getErrorReturnObject(data.data.username, "Username and Password don't match"));
+            }
           } else {
-            this.user.sendUTF(LoginHandler.getErrorReturnObject(data.data.username, "Username and Password don't match"));
+            this.user.sendUTF(LoginHandler.getErrorReturnObject("", "Object does not have the needed properties"));
           }
-        } else {
-          this.user.sendUTF(LoginHandler.getErrorReturnObject("", "Object does not have the needed properties"));
+        } catch (e) {
+          console.error("LOGIN", e);
+          this.user.sendUTF(LoginHandler.getErrorReturnObject("", "Unexpected Error occurred"));
         }
       });
     }

@@ -1,15 +1,12 @@
 "use strict";
 (async () => {
-const User = require("./entity/User");
 const WebSocketServer = require("websocket").server;
 const http = require("http");
-const uuidV4 = require('uuid/v4');
 const serverInformationEmitter = require("./util/serverInformationEmitter");
+const userService = require("./services/UserService");
 
 
-var users= {};
-var userCounter = 0;
-
+  
 var server = http.createServer(function(request , response) {
   console.log((new Date()) + " Received request for " + request.url);
   response.writeHead(404);
@@ -47,16 +44,13 @@ wsServer.on('request', function(request) {
     console.log((new Date()) + ' Connection rejected wrong protocol: ' + request.requestedProtocols);
     return;
   }
-  var connection = request.accept('echo-protocol', request.origin);
+  let connection = request.accept('echo-protocol', request.origin);
   console.log((new Date()) + ' Connection accepted.');
 
-  var userIndex = uuidV4();
-  users[userIndex] = new User(connection, userIndex);
-  userCounter++;
+  userService.createUser(connection);
 
   connection.on('close', function(reasonCode, description) {
     console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
-    delete users[userIndex];
   });
 });
 
