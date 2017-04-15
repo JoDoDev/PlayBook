@@ -1,7 +1,7 @@
 "use strict";
 const uuidV4 = require('uuid/v4');
 
-const databaseHelper = require("../../database/DatabaseHelper/DatabaseHelper");
+const DatabaseHelper = require("../../database/DatabaseHelper/DatabaseHelper");
 
 
 module.exports = class LoginHandler {
@@ -15,7 +15,7 @@ module.exports = class LoginHandler {
             return;
           }
           let qResult;
-          qResult = await databaseHelper.checkUsernameAndPassword(data.data.username, data.data.password);
+          qResult = await DatabaseHelper.checkUsernameAndPassword(data.data.username, data.data.password);
           let success = qResult["0"].success;
           let userId = qResult["0"].userId;
           let username = (qResult["0"].username !== null)? qResult["0"].username: "";
@@ -24,7 +24,7 @@ module.exports = class LoginHandler {
           let sessionKey = "";
           if (success === 'true') {
             sessionKey = uuidV4();
-            await databaseHelper.setSessionKey(userId, sessionKey);
+            await DatabaseHelper.setSessionKey(userId, sessionKey);
             user.sessionKey = sessionKey;
             user.username = username;
             user.email = email;

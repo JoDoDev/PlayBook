@@ -10,33 +10,33 @@ const getIdOfUser = require("./user/getIdOfUser");
 const setSessionKey = require("./session/setSessionKey");
 
 
-let DatabaseHelper = class DatabaseHelper {
+module.exports = class DatabaseHelper {
 
   /*
     User
   */
 
-  async checkUsernameAndPassword(username, password) {
+  static async checkUsernameAndPassword(username, password) {
     return await checkUsernameAndPassword(username, password);
   }
 
-  async doesUserExist(username, email) {
+  static async doesUserExist(username, email) {
     return await doesUserExist(username, email);
   }
 
-  async doesEmailExist(email) {
+  static async doesEmailExist(email) {
     return await doesEmailExist(email);
   }
 
-  async doesUsernameExist(username) {
+  static async doesUsernameExist(username) {
     return await doesUsernameExist(username);
   }
 
-  async createUser(username, email, password) {
+  static async createUser(username, email, password) {
     return await createUser(username, email, password);
   }
 
-  async getIdOfUser(uniqueKey) {
+  static async getIdOfUser(uniqueKey) {
     return await getIdOfUser(uniqueKey);
   }
 
@@ -44,12 +44,8 @@ let DatabaseHelper = class DatabaseHelper {
     Session
   */
 
-  async setSessionKey (userId, SessionKey) {
+  static async setSessionKey (userId, SessionKey) {
     return await setSessionKey(userId, SessionKey);
   }
 
 };
-
-
-let databaseHelper = new DatabaseHelper();
-module.exports = databaseHelper;

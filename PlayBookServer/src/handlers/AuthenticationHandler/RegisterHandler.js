@@ -1,7 +1,7 @@
 "use strict";
 const uuidV4 = require('uuid/v4');
 const DoesUserExist = require("../../actions/DoesUserExist");
-const databaseHelper = require("../../database/DatabaseHelper/DatabaseHelper");
+const DatabaseHelper = require("../../database/DatabaseHelper/DatabaseHelper");
 
 module.exports = class RegisterHandler {
   constructor(user) {
@@ -20,13 +20,13 @@ module.exports = class RegisterHandler {
           }
           let qResult;
 
-          await databaseHelper.createUser(data.data.username, data.data.email, data.data.password);
-          qResult = await databaseHelper.getIdOfUser(data.data.username);
+          await DatabaseHelper.createUser(data.data.username, data.data.email, data.data.password);
+          qResult = await DatabaseHelper.getIdOfUser(data.data.username);
           let userId = qResult[0].userId;
 
           if (typeof userId === 'number') {
             let sessionKey = uuidV4();
-            await databaseHelper.setSessionKey(userId, sessionKey);
+            await DatabaseHelper.setSessionKey(userId, sessionKey);
             user.sessionKey = sessionKey;
             user.username = data.data.username;
             user.email = data.data.email;
