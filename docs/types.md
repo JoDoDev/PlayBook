@@ -181,15 +181,64 @@ Server:
     "data": {}  
 }
 ```
-
-Server Error:  
-   
-[[CAUSE]] type string, Example: "you are not logged in"   
-
+  
+  
+#### DOES_EMAIL_EXIST
+Client:  
+  
+[[EMAIL]] type String
+  
 ```JSON
 {   
-    "type": "REGISTER_ERROR",
-    "data": {},
-    "cause": "[[CAUSE]]"
+    "type": "DOES_EMAIL_EXIST",  
+    "data": {
+      "email": "[[EMAIL]]"
+    }  
 }
 ```
+
+Server:  
+  
+[[EMAIL]] type String  
+[[EXISTS]] type Boolean, is True when Exists  
+  
+```JSON  
+{   
+    "type": "DOES_EMAIL_EXIST",  
+    "data": {
+      "email": "[[EMAIL]]",
+      "exists": "[[EXISTS]]"
+    }  
+}
+```  
+  
+  
+#### DOES_USERNAME_EXIST  
+Client:  
+  
+[[USERNAME]] type String
+  
+```JSON  
+{   
+    "type": "DOES_USERNAME_EXIST",  
+    "data": {
+      "username": "[[USERNAME]]"
+    }  
+}
+```  
+  
+Server:  
+  
+[[USERNAME]] type String  
+[[EXISTS]] type Boolean, is True when Exists  
+  
+```JSON  
+{   
+    "type": "DOES_USERNAME_EXIST",  
+    "data": {
+      "username": "[[USERNAME]]",
+      "exists": "[[EXISTS]]"
+    }  
+}
+```  
+  

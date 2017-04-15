@@ -1,6 +1,6 @@
 "use strict";
 const uuidV4 = require('uuid/v4');
-const doesUserExist = require("../../actions/DoesUserExist");
+const DoesUserExist = require("../../actions/DoesUserExist");
 const databaseHelper = require("../../database/DatabaseHelper/DatabaseHelper");
 
 module.exports = class RegisterHandler {
@@ -13,7 +13,7 @@ module.exports = class RegisterHandler {
           this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username,  data.data.email, "You are already logged in"));
           return;
         }
-        if(!(await doesUserExist.doesUserExistWithUsernameOrEmail(data.data.username, data.data.email))) {
+        if(!(await DoesUserExist.doesUserExistWithUsernameOrEmail(data.data.username, data.data.email))) {
           if(!RegisterHandler.isUserInputCorrect(data.data.username, data.data.email, data.data.password)) {
             this.user.sendUTF(RegisterHandler.getErrorReturnObject(data.data.username, data.data.email, "User Inputs are Wrong"));
             return;
@@ -49,8 +49,8 @@ module.exports = class RegisterHandler {
 
   static isUserInputCorrect(username, email, password) {
     if(username.length >= 3 && password.length >= 3) {
-      let emailRegex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])+";
-      if(emailRegex.test(email)) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(re.test(email)) {
         return true;
       }
     }

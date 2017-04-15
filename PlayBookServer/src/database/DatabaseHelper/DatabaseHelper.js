@@ -2,6 +2,8 @@
 // User
 const checkUsernameAndPassword = require("./user/checkUsernameAndPassword");
 const doesUserExist = require("./user/doesUserExist");
+const doesEmailExist = require("./user/doesEmailExist");
+const doesUsernameExist = require("./user/doesUsernameExist");
 const createUser = require("./user/createUser");
 const getIdOfUser = require("./user/getIdOfUser");
 // Session
@@ -20,6 +22,14 @@ let DatabaseHelper = class DatabaseHelper {
 
   async doesUserExist(username, email) {
     return await doesUserExist(username, email);
+  }
+
+  async doesEmailExist(email) {
+    return await doesEmailExist(email);
+  }
+
+  async doesUsernameExist(username) {
+    return await doesUsernameExist(username);
   }
 
   async createUser(username, email, password) {

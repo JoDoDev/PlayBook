@@ -1,20 +1,19 @@
 "use strict";
 const databaseHelper = require("../database/DatabaseHelper/DatabaseHelper");
 
-let DoesUserExist = class DoesUserExist {
-  async doesUserExistWithUsernameOrEmail(username, email) {
-    try {
-      let qResult = await databaseHelper.doesUserExist(username, email);
-      return (qResult[0].exists === 'true');
-    } catch (e) {
-    }
+module.exports = class DoesUserExist {
+  static async doesUserExistWithUsernameOrEmail(username, email) {
+    let qResult = await databaseHelper.doesUserExist(username, email);
+    return (qResult[0].exists === 'true');
   }
 
-  static doesUserExistWithUserId(userId) {
+  static async doesEmailExist(email) {
+    let qResult = await databaseHelper.doesEmailExist(email);
+    return (qResult[0].exists === 'true');
+  }
 
+  static async doesUsernameExist(username) {
+    let qResult = await databaseHelper.doesUsernameExist(username);
+    return (qResult[0].exists === 'true');
   }
 };
-
-
-let doesUserExist = new DoesUserExist();
-module.exports = doesUserExist;
