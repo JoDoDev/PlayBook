@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "hotreload": "nodemon lib/index.js"
+    "hotreload": "nodemon src/index.js",
+    "babel": "babel src --out-dir lib"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-runtime": "^6.23.0",
     "mysql": "^2.13.0",
     "uuid": "^3.0.1",
     "websocket": "^1.0.24"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.4.0"
   }
 }
