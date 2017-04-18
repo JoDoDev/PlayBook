@@ -46,8 +46,7 @@ module.exports = class RegisterHandler {
           this.user.sendUTF(RegisterHandler.getErrorReturnObject("", "", "Object does not have the needed properties"));
         }
       } catch (e) {
-        console.error("REGISTER");
-        console.error(e);
+        console.error("REGISTER_ERROR", e);
         this.user.sendUTF(RegisterHandler.getErrorReturnObject("", "", "Unexpected Error occurred"));
       }
     });

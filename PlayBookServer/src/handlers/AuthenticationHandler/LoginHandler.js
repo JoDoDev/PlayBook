@@ -40,7 +40,7 @@ module.exports = class LoginHandler {
             this.user.sendUTF(LoginHandler.getErrorReturnObject("", "Object does not have the needed properties"));
           }
         } catch (e) {
-          console.error("LOGIN", e);
+          console.error("LOGIN_ERROR", e);
           this.user.sendUTF(LoginHandler.getErrorReturnObject("", "Unexpected Error occurred"));
         }
       });

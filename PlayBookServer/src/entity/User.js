@@ -17,7 +17,7 @@ module.exports = class User {
         try {
           let data = JSON.parse(message.utf8Data);
           if (data.hasOwnProperty('type')) {
-            console.log("user received : " + data.type, data);
+            console.log("To Server : " + data.type, data);
             this.messageEmitter.emit(data.type, data);
           }
         } catch (e) {
@@ -46,6 +46,7 @@ module.exports = class User {
     if (typeof data === 'object') {
       data = JSON.stringify(data);
     }
+    console.log("To Client : " + data.type, data);
     this.connection.sendUTF(data);
   }
 
