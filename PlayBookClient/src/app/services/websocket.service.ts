@@ -8,10 +8,14 @@ export class WebsocketService {
 
   constructor() {
     this.client = new WebSocket("ws://localhost:6283/", "echo-protocol");
-    this.client.onmessage = this.onMessage;
-    this.client.onclose  = this.onClose;
-    this.client.onopen = this.onOpen;
-    this.client.onerror = this.onError;
+    //noinspection SpellCheckingInspection
+    this.client.onmessage = (message: MessageEvent) => this.onMessage(message);
+    //noinspection SpellCheckingInspection
+    this.client.onclose  = (closeEvent: CloseEvent) => this.onClose(closeEvent);
+    //noinspection SpellCheckingInspection
+    this.client.onopen = (connection: Event) => this.onOpen(connection);
+    //noinspection SpellCheckingInspection
+    this.client.onerror = (error : Event) => this.onError(error);
   }
 
   private onOpen(connection: Event) {
@@ -42,7 +46,4 @@ export class WebsocketService {
     }
     this.client.send(data);
   }
-
-
-
 }

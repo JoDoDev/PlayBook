@@ -76,6 +76,7 @@ Client:
 
 Server:  
 
+[[VALID]] type Boolean
 [[EMAIL]] type String, Is an Empty String when Login credentials where false.  
 [[USERNAME]] type String, Is an Empty String when Login credentials where false.  
 [[SESSIONKEY]] type String, Is an Empty String when Login credentials where false.  
@@ -84,6 +85,7 @@ Server:
 {   
     "type": "LOGIN",  
     "data": {  
+        "valid": "[[VALID]]",
         "email": "[[EMAIL]]",
         "username": "[[USERNAME]]",
         "sessionKey": "[[SESSIONKEY]]"

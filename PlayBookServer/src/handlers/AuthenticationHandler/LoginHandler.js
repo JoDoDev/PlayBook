@@ -32,9 +32,9 @@ module.exports = class LoginHandler {
               user.userId = userId;
               user.loggedIn = true;
 
-              this.user.sendUTF(LoginHandler.getReturnObject(sessionKey, username, email));
+              this.user.sendUTF(LoginHandler.getReturnObject(true, sessionKey, username, email));
             } else {
-              this.user.sendUTF(LoginHandler.getErrorReturnObject(data.data.username, "Username and Password don't match"));
+              this.user.sendUTF(LoginHandler.getReturnObject(false, "", data.data.username, ""));
             }
           } else {
             this.user.sendUTF(LoginHandler.getErrorReturnObject("", "Object does not have the needed properties"));
@@ -64,10 +64,11 @@ module.exports = class LoginHandler {
     return false;
   }
 
-  static getReturnObject(sessionKey, username, email) {
+  static getReturnObject(valid, sessionKey, username, email) {
     return {
       type: "LOGIN",
       data: {
+        valid: valid,
         sessionKey: sessionKey,
         username: username,
         email: email
