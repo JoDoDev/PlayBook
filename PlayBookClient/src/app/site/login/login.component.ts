@@ -2,6 +2,7 @@ import {Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {WebsocketService} from '../../services/websocket.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -33,14 +34,12 @@ export class LoginComponent implements OnInit , OnDestroy{
   private loginErrorListener;
   showErrorText: boolean = false;
 
-  //TODO: Validate -> username correct
-  //TODO: Write errormessage if input is incorrect
-
   loginForm: FormGroup;
 
   constructor(
     @Inject(WebsocketService) private websocketService,
-    @Inject(UserService) private userService
+    @Inject(UserService) private userService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -55,12 +54,11 @@ export class LoginComponent implements OnInit , OnDestroy{
     });
   }
 
-  onSubmit(empForm: any) {
+  onSubmit() {
     let sendObject = {
       type: 'LOGIN',
       data: this.loginForm.value
     };
-    console.log("sdf");
     this.websocketService.send(sendObject);
   }
 
@@ -69,9 +67,10 @@ export class LoginComponent implements OnInit , OnDestroy{
       this.showErrorText = true;
       return;
     }
-    this.showErrorText = false;
     this.userService.username = data.data.username;
     this.userService.email = data.data.email;
+    //noinspection JSIgnoredPromiseFromCall
+    this.router.navigate(['/home']);
   }
 
   private onLoginError(data) {
