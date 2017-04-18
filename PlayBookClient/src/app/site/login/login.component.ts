@@ -1,6 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {WebsocketService} from '../../services/websocket.service';
-import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -26,13 +25,12 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(@Inject(WebsocketService) private websocketService) { }
   //TODO: Validate -> username correct
   //TODO: Write errormessage if input is incorrect
 
   loginForm: FormGroup;
 
-  constructor() { }
+  constructor(@Inject(WebsocketService) private websocketService) { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
