@@ -7,8 +7,4 @@ describe('play-book App', () => {
     page = new PlayBookPage();
   });
 
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
-  });
 });
