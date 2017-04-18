@@ -8,14 +8,6 @@ import { Component, OnInit } from '@angular/core';
       width: 70%;
       margin: 30px auto;
     }
-    .games {
-      background-color: red;
-    }
-    .a {
-      width: 45%;
-      float: left;
-      margin: 2.5%;
-    }
   `]
 })
 export class HomeComponent implements OnInit {
