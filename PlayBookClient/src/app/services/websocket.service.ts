@@ -38,7 +38,7 @@ export class WebsocketService {
 
   public send(data: any) {
     if (typeof data !== 'string'){
-      data = JSON.parse(data);
+      data = JSON.stringify(data);
     }
     this.client.send(data);
   }
