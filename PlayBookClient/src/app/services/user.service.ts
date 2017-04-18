@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {getCookie, setCookie} from '../util/cookie';
 
 @Injectable()
 export class UserService {
@@ -11,11 +12,13 @@ export class UserService {
     return this._sessionKey;
   }
   set sessionKey(value: string) {
+    setCookie("sessionkey", value, 3);
     this._sessionKey = value;
   }
 
-
-  constructor() { }
+  constructor() {
+    this._sessionKey = getCookie("sessionkey");
+  }
 
 
 }

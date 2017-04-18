@@ -55,6 +55,10 @@ export class LoginComponent implements OnInit , OnDestroy{
   }
 
   onSubmit() {
+    if (this.userService.loggdin === true) {
+      this.navigateToHome();
+      return;
+    }
     let sendObject = {
       type: 'LOGIN',
       data: this.loginForm.value
@@ -69,12 +73,18 @@ export class LoginComponent implements OnInit , OnDestroy{
     }
     this.userService.username = data.data.username;
     this.userService.email = data.data.email;
-    //noinspection JSIgnoredPromiseFromCall
-    this.router.navigate(['/home']);
+    this.userService.sessionKey = data.data.sessionKey;
+    this.userService.loggdin = true;
+    this.navigateToHome()
   }
 
   private onLoginError(data) {
     console.error("onLoginError", data);
+  }
+
+  private navigateToHome() {
+    //noinspection JSIgnoredPromiseFromCall
+    this.router.navigate(['/home']);
   }
 
   ngOnDestroy() {
