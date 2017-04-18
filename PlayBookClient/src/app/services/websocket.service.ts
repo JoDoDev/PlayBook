@@ -36,6 +36,13 @@ export class WebsocketService {
     }
   }
 
+  send(data: any) {
+    if (typeof data !== 'string'){
+      data = JSON.parse(data);
+    }
+    this.client.send(data);
+  }
+
 
 
 }
