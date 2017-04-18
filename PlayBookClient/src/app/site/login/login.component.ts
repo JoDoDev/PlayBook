@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {WebsocketService} from '../../services/websocket.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../services/user.service';
@@ -28,7 +28,7 @@ import {UserService} from '../../services/user.service';
     }
   `]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit , OnDestroy{
   private loginListener;
   private loginErrorListener;
   showErrorText: boolean = false;
@@ -44,8 +44,10 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loginListener = this.websocketService.messageEmitter.on("LOGIN", (data) => { this.onLogin(data) });
-    this.loginErrorListener = this.websocketService.messageEmitter.on("LOGIN_ERROR", (data) => { this.onLoginError(data) });
+    this.loginListener = (data) => { this.onLogin(data) };
+    this.loginErrorListener = (data) => { this.onLoginError(data) };
+    this.websocketService.messageEmitter.on("LOGIN", this.loginListener);
+    this.websocketService.messageEmitter.on("LOGIN_ERROR", this.loginErrorListener);
 
     this.loginForm = new FormGroup({
       'username': new FormControl(null, Validators.required),
@@ -73,7 +75,11 @@ export class LoginComponent implements OnInit {
   }
 
   private onLoginError(data) {
-
+    console.error("onLoginError", data);
   }
 
+  ngOnDestroy() {
+    this.websocketService.messageEmitter.removeListener("LOGIN", this.loginListener);
+    this.websocketService.messageEmitter.removeListener("LOGIN_ERROR", this.loginErrorListener);
+  }
 }
