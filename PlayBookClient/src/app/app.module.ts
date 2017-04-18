@@ -13,6 +13,7 @@ import {CustomMaterialModuleModule} from './custom-material-module/custom-materi
 import { NotfoundComponent } from './site/notfound/notfound.component';
 import { GameComponent } from './site/home/game.component';
 import {WebsocketService} from './services/websocket.service';
+import {UserService} from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {WebsocketService} from './services/websocket.service';
     ReactiveFormsModule
   ],
   providers: [
-    WebsocketService
+    WebsocketService,
+    UserService
   ],
   entryComponents: [],
   bootstrap: [AppComponent]

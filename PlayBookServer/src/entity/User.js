@@ -17,6 +17,7 @@ module.exports = class User {
         try {
           let data = JSON.parse(message.utf8Data);
           if (data.hasOwnProperty('type')) {
+            console.log("user received : " + data.type, data);
             this.messageEmitter.emit(data.type, data);
           }
         } catch (e) {

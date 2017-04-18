@@ -6,5 +6,16 @@ export class UserService {
   public email: string;
   public loggdin: boolean = false;
 
+  private _sessionKey: string;
+  get sessionKey(): string {
+    return this._sessionKey;
+  }
+  set sessionKey(value: string) {
+    this._sessionKey = value;
+  }
+
+
   constructor() { }
+
+
 }
