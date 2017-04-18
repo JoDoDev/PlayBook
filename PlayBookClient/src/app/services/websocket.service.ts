@@ -14,19 +14,19 @@ export class WebsocketService {
     this.client.onerror = this.onError;
   }
 
-  onOpen(connection: Event) {
+  private onOpen(connection: Event) {
     console.log("Connected with server");
   }
 
-  onError(error : Event) {
+  private onError(error : Event) {
     console.error(error);
   }
 
-  onClose(closeEvent: CloseEvent) {
+  private onClose(closeEvent: CloseEvent) {
     console.log(closeEvent)
   }
 
-  onMessage(message: MessageEvent) {
+  private onMessage(message: MessageEvent) {
     try {
       let data = JSON.parse(message.data);
       console.log('Received Data', data);
@@ -36,7 +36,7 @@ export class WebsocketService {
     }
   }
 
-  send(data: any) {
+  public send(data: any) {
     if (typeof data !== 'string'){
       data = JSON.parse(data);
     }
