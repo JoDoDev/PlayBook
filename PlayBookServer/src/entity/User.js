@@ -1,14 +1,13 @@
 "use strict";
-const userService = require("../services/UserService");
 const AuthenticationHandler = require('../handlers/AuthenticationHandler/AuthenticationHandler');
 const MessageEmitter = require('../util/MessageEmitter');
 
 module.exports = class User {
-  constructor(connection, userIndex) {
+  constructor(connection, userservice, userIndex) {
     this.connection = connection;
     this.userIndex = userIndex;
+    this.userservice = userservice;
     this.setInitialData();
-
     this.messageEmitter = new MessageEmitter();
 
     this.authenticationhandler = new AuthenticationHandler(this);
@@ -27,6 +26,8 @@ module.exports = class User {
               "data": {},
               "cause": "Could not Transform data into Object"
             });
+          } else {
+            console.log(e);
           }
         }
       }
@@ -35,7 +36,7 @@ module.exports = class User {
 
     connection.on('close', () => {
       this.messageEmitter.removeAllListeners();
-      userService.deleteUser(this.userIndex);
+      this.userservice.deleteUser(this.userIndex);
     });
   }
 

@@ -10,7 +10,7 @@ class UserService {
 
     createUser(connection) {
       let userIndex = uuidV4();
-      this.users[userIndex] = new User(connection, userIndex);
+      this.users[userIndex] = new User(connection, this, userIndex);
       this.userCounter++;
     }
 
@@ -24,5 +24,5 @@ class UserService {
     }
 }
 
-let userService = new UserService();
+var userService = new UserService();
 module.exports = userService;

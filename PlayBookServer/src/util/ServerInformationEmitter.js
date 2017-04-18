@@ -23,10 +23,11 @@ process.on('SIGINT', () => {
 });
 
 //catches uncaught exceptions
-process.on('uncaughtException', () => {
+process.on('uncaughtException', (err) => {
   serverInformationEmitter.emit("CLOSE", {
     type: "CLOSE"
   });
+  console.error(err);
   process.exit();
 });
 
