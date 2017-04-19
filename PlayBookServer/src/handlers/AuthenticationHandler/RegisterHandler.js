@@ -86,7 +86,7 @@ module.exports = class RegisterHandler {
     return {
       type: "REGISTER",
       data: {
-        sessionKey: sessionKey,
+        sessionkey: sessionKey,
         username: username,
         email: email,
       }

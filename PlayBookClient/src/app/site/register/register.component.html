@@ -3,28 +3,37 @@
   <hr>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <md-card-content>
-      <md-input-container class="full-width-input">
+      <md-input-container class="full-width-input" style="margin-top: 15px">
         <input
           mdInput
           placeholder="Benutzername"
           formControlName="username"
         >
+        <md-error *ngIf="formErrors.username" class="alert alert-danger">
+          {{ formErrors.username }}
+        </md-error>
       </md-input-container>
-      <md-input-container class="full-width-input">
+      <md-input-container class="full-width-input" style="margin-top: 15px">
         <input
           mdInput
           type="email"
           placeholder="E-Mail"
           formControlName="email"
         >
+        <md-error *ngIf="formErrors.email" class="alert alert-danger">
+          {{ formErrors.email }}
+        </md-error>
       </md-input-container>
-      <md-input-container class="full-width-input">
+      <md-input-container class="full-width-input" style="margin-top: 15px">
         <input
           mdInput
           type="password"
           placeholder="Passwort"
           formControlName="password"
         >
+        <md-error *ngIf="formErrors.password" class="alert alert-danger">
+          {{ formErrors.password }}
+        </md-error>
       </md-input-container>
     </md-card-content>
     <md-card-actions>

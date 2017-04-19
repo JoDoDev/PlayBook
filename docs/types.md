@@ -142,7 +142,7 @@ Server:
     "data": {  
         "email": "[[EMAIL]]",
         "username": "[[USERNAME]]",
-        "sessionKey": "[[SESSIONKEY]]"
+        "sessionkey": "[[SESSIONKEY]]"
     }  
 }
 ```  
