@@ -1,5 +1,4 @@
 "use strict";
-const databaseConnectionProvider = require("../../DatabaseConnectionProvider");
 const makeQuery = require("../../makeQuery");
 
 module.exports = async function checkUsernameAndPassword (username, password) {

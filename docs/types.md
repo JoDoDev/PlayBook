@@ -245,26 +245,26 @@ Server:
 ```  
   
   
-#### MULTIJ_GET_COLLECTIONS  
+#### MULTIJ_GET_TOPICS  
 Client:  
   
 ```JSON  
 {   
-    "type": "MULTIJ_GET_COLLECTIONS",  
+    "type": "MULTIJ_GET_TOPICS",  
     "data": {}  
 }
 ```  
   
 Server:  
   
-[[COLLECTION_ID]] type number  
-[[COLLECTION_NAME]] type string
+[[TOPIC_ID]] type number  
+[[TOPIC_NAME]] type string
   
 ```JSON  
 {   
-    "type": "MULTIJ_GET_COLLECTIONS",  
+    "type": "MULTIJ_GET_TOPICS",  
     "data": {
-      "[[COLLECTION_ID]]": "[[COLLECTION_NAME]]"
+      "[[TOPIC_ID]]": "[[TOPIC_NAME]]"
     }  
 }
 ```  
@@ -273,13 +273,13 @@ Server:
 #### MULTIJ_JOIN  
 Client:  
   
-[[COLLECTION_ID]] type number, id of Collection
+[[TOPIC_ID]] type number, id of topic
   
 ```JSON  
 {   
     "type": "MULTIJ_JOIN",  
     "data": {
-      "collection": "[[COLLECTION_ID]]"
+      "topic": "[[TOPIC_ID]]"
     }  
 }
 ```  

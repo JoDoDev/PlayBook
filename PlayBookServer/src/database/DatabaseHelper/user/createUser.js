@@ -1,5 +1,4 @@
 "use strict";
-const databaseConnectionProvider = require("../../DatabaseConnectionProvider");
 const makeQuery = require("../../makeQuery");
 
 
