@@ -270,14 +270,14 @@ Server:
 ```  
   
   
-#### MULTIJ_JOIN_GAME  
+#### MULTIJ_JOIN  
 Client:  
   
 [[COLLECTION_ID]] type number, id of Collection
   
 ```JSON  
 {   
-    "type": "JOIN_GAME_MULTIJ",  
+    "type": "MULTIJ_JOIN",  
     "data": {
       "collection": "[[COLLECTION_ID]]"
     }  
@@ -293,7 +293,7 @@ Server:
   
 ```JSON  
 {   
-    "type": "JOIN_GAME_MULTIJ",  
+    "type": "MULTIJ_JOIN",  
     "data": {
       "questions": {
         [[QUESTION_ID]] : {
