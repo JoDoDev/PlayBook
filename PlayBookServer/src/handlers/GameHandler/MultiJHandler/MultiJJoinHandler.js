@@ -14,10 +14,10 @@ module.exports = class MultiJJoinHandler {
             this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("Object does not have the needed properties"));
             return;
           }
-          // if (this.user.loggedIn === false) {
-          //   this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject( "You need to be logged in"));
-          //   return;
-          // }
+          if (this.user.loggedIn === false) {
+            this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject( "You need to be logged in"));
+            return;
+          }
           if (this.multiJHandler.isJoined === true) {
             this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("You are already joined"));
             return;
@@ -51,7 +51,7 @@ module.exports = class MultiJJoinHandler {
           this.user.sendUTF(MultiJJoinHandler.getReturnObject(questions));
         } catch (e) {
           console.error("LOGIN_ERROR", e);
-          this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("", "Unexpected Error occurred"));
+          this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("Unexpected Error occurred"));
         }
       });
     }
