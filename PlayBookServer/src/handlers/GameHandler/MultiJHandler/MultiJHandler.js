@@ -1,5 +1,6 @@
 "use strict";
 const MultiJJoinHandler = require("./MultiJJoinHandler");
+const MultiJAnswerQuestionHandler = require("./MultiJAnswerQuestionHandler");
 const MultiJQuitHandler = require("./MultiJQuitHandler");
 
 
@@ -10,6 +11,7 @@ module.exports = class MultiJHandler {
       this.isJoined = false;
 
       this.multiJJoinHandler = new MultiJJoinHandler(this.user, this);
+      this.multiJAnswerQuestionHandler = new MultiJAnswerQuestionHandler(this.user, this);
       this.multiJQuitHandler = new MultiJQuitHandler(this.user, this);
     }
 };

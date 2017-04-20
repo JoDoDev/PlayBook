@@ -14,7 +14,7 @@ module.exports = class LogoutHandler {
             this.user.sendUTF(LogoutHandler.getReturnObject());
           }
         } catch (e) {
-          console.error("LOGOUT", e);
+          console.error("LOGOUT_ERROR", e);
           this.user.sendUTF(LogoutHandler.getErrorReturnObject("Unexpected Error occurred"));
         }
       });

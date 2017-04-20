@@ -13,7 +13,7 @@ module.exports = class DoesUsernameExistHandler {
           this.user.sendUTF(DoesUsernameExistHandler.getErrorReturnObject("Object does not have the needed properties"));
         }
       } catch (e) {
-        console.error("DOES_USERNAME_EXIST", e);
+        console.error("DOES_USERNAME_EXIST_ERROR", e);
         this.user.sendUTF(DoesUsernameExistHandler.getErrorReturnObject("Unexpected Error occurred"));
       }
     });

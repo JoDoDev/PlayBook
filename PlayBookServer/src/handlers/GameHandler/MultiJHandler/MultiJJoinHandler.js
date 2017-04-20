@@ -14,10 +14,10 @@ module.exports = class MultiJJoinHandler {
             this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("Object does not have the needed properties"));
             return;
           }
-          if (this.user.loggedIn === false) {
-            this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject( "You need to be logged in"));
-            return;
-          }
+          // if (this.user.loggedIn === false) {
+          //   this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject( "You need to be logged in"));
+          //   return;
+          // }
           if (this.multiJHandler.isJoined === true) {
             this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("You are already joined"));
             return;
@@ -30,17 +30,17 @@ module.exports = class MultiJJoinHandler {
           for (var question of qResultQuestions) {
             let qResultAnswer = await DatabaseHelper.getAnswersForQuestion(question.questionId);
             questions[question.questionId] = {
-              question: question.questionText
+              questionText: question.questionText
             };
             questionsAdmin[question.questionId] = {
-              question: question.questionText
+              questionText: question.questionText
             };
             for (var answer of qResultAnswer) {
               questions[question.questionId][answer.answerId] = {
-                answer: answer.answerText
+                AnswerText: answer.answerText
               };
               questionsAdmin[question.questionId][answer.answerId] = {
-                answer: answer.answerText,
+                AnswerText: answer.answerText,
                 isCorrect: answer.isCorrect
               };
             }
@@ -50,7 +50,7 @@ module.exports = class MultiJJoinHandler {
           this.multiJHandler.isJoined = true;
           this.user.sendUTF(MultiJJoinHandler.getReturnObject(questions));
         } catch (e) {
-          console.error("LOGIN_ERROR", e);
+          console.error("MULTIJ_JOIN", e);
           this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("Unexpected Error occurred"));
         }
       });

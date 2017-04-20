@@ -13,7 +13,7 @@ module.exports = class DoesEmailExistHandler {
           this.user.sendUTF(DoesEmailExistHandler.getErrorReturnObject("Object does not have the needed properties"));
         }
       } catch (e) {
-        console.error("DOES_EMAIL_EXIST", e);
+        console.error("DOES_EMAIL_EXIST_ERROR", e);
         this.user.sendUTF(DoesEmailExistHandler.getErrorReturnObject("Unexpected Error occurred"));
       }
     });

@@ -297,7 +297,7 @@ Server:
     "data": {
       "questions": {
         "[[QUESTION_ID]]" : {
-            "question": "[[QUESTION]]",
+            "questionText": "[[QUESTION]]",
             "answers": {
                 "[[ANSWER_ID]]": "[[ANSWER]]"
             }
@@ -348,6 +348,16 @@ Server:
   
 #### MULTIJ_FINISH  
   
+Client:  
+
+  
+```JSON  
+{   
+    "type": "MULTIJ_FINISH",  
+    "data": { }  
+}
+```  
+  
 Server:  
   
 [[POINTS]] type number,
@@ -361,11 +371,12 @@ Server:
         "points": "[[POINTS]]",
         "yourpoints": "[[YOUR_POINTS]]",
         "time": "[[TIME]]",
-        "answers": {
-            "[[ANSWER_ID]]": {
-                "yourAnswerID": "[[YOUR_ANSWER_ID]]",
+        "question": {
+            "[[QUESTION_ID]]": {
+                "yourAnswerId": "[[YOUR_ANSWER_ID]]",
                 "yourAnswerText": "[[YOUR_ANSWER_Text]]",
-                "correct": "[[CORRECT]]"
+                "correct": "[[CORRECT]]",
+                "questionText": "[[QUESTION]]"
             }
         }
     }  

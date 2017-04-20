@@ -24,7 +24,7 @@ module.exports = class MultiJQuitHandler {
           this.multiJHandler.isJoined = false;
           this.user.sendUTF(MultiJJoinHandler.getReturnObject());
         } catch (e) {
-          console.error("LOGIN_ERROR", e);
+          console.error("MULTIJ_QUIT", e);
           this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("Unexpected Error occurred"));
         }
       });
