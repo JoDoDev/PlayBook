@@ -296,8 +296,8 @@ Server:
     "type": "MULTIJ_JOIN",  
     "data": {
       "questions": {
-        [[QUESTION_ID]] : {
-            "question": [[QUESTION]],
+        "[[QUESTION_ID]]" : {
+            "question": "[[QUESTION]]",
             "answers": {
                 "[[ANSWER_ID]]": "[[ANSWER]]"
             }
@@ -358,9 +358,16 @@ Server:
 {   
     "type": "MULTIJ_QUIT",  
     "data": {
-        "points": [[POINTS]],
-        "yourpoints": [[YOUR_POINTS]],
-        "time": [[TIME]]
+        "points": "[[POINTS]]",
+        "yourpoints": "[[YOUR_POINTS]]",
+        "time": "[[TIME]]",
+        "answers": {
+            "[[ANSWER_ID]]": {
+                "yourAnswerID": "[[YOUR_ANSWER_ID]]",
+                "yourAnswerText": "[[YOUR_ANSWER_Text]]",
+                "correct": "[[CORRECT]]"
+            }
+        }
     }  
 }
 ```  
