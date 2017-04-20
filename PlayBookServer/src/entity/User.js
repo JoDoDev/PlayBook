@@ -1,16 +1,18 @@
 "use strict";
 const AuthenticationHandler = require('../handlers/AuthenticationHandler/AuthenticationHandler');
+const GameHandler = require('../handlers/GameHandler/GameHandler');
 const MessageEmitter = require('../util/MessageEmitter');
 
 module.exports = class User {
-  constructor(connection, userservice, userIndex) {
+  constructor(connection, userService, userIndex) {
     this.connection = connection;
     this.userIndex = userIndex;
-    this.userservice = userservice;
+    this.userservice = userService;
     this.setInitialData();
     this.messageEmitter = new MessageEmitter();
 
     this.authenticationhandler = new AuthenticationHandler(this);
+    this.GameHandler = new GameHandler(this);
 
     connection.on('message', (message) => {
       if (message.type === 'utf8') {

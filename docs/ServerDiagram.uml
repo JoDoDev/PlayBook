@@ -5,7 +5,7 @@
   <nodes>
     <node x="-738.3582373947339" y="659.7468762848919">E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;</node>
     <node x="2968.9078872200953" y="371.78740812396643">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseConnectionProvider.js#mysql#20;</node>
-    <node x="1209.1813772518922" y="177.88039464266677">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;</node>
+    <node x="835.0" y="403.0">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;</node>
     <node x="-715.8465128958587" y="418.54797548280675">E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/DoesEmailExistHandler.js#DoesUserExist#20;</node>
     <node x="560.2523584905659" y="-32.81839622641513">E:/repos/PlayBook/PlayBookServer/src/actions/DoesUserExist.js#DatabaseHelper#20;</node>
     <node x="-1195.2073682367095" y="413.03724663834186">E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/DoesUsernameExistHandler.js#DoesUserExist#20;</node>
@@ -14,7 +14,8 @@
     <node x="-1397.9738776706718" y="525.8532843741909">E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/LogoutHandler.js</node>
     <node x="-31.018867924527967" y="1256.5754716981132">E:/repos/PlayBook/PlayBookServer/src/util/MessageEmitter.js#EventEmitter#20;</node>
     <node x="1078.9457547169814" y="1095.5754716981132">E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJHandler.js#MultiJJoinHandler#20;</node>
-    <node x="1062.5400943396228" y="907.3301886792451">E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#DatabaseHelper#20;</node>
+    <node x="1149.0" y="860.3333333333333">E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#DatabaseHelper#20;E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#MultiJService#103;</node>
+    <node x="1793.4999999999993" y="988.6666666666665">E:/repos/PlayBook/PlayBookServer/src/services/gameServices/MultiJService.js</node>
     <node x="-276.85761791793743" y="464.6262247147011">E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DatabaseHelper#117;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DoesUserExist#55;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#uuidV4#20;</node>
     <node x="-45.966981132075716" y="1516.9528301886792">E:/repos/PlayBook/PlayBookServer/src/util/ServerInformationEmitter.js#EventEmitter#20;</node>
     <node x="-90.14622641509436" y="1059.7004716981132">E:/repos/PlayBook/PlayBookServer/src/entity/User.js#AuthenticationHandler#20;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#GameHandler#118;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#MessageEmitter#186;</node>
@@ -24,7 +25,10 @@
     <node x="1828.0895448783508" y="40.89305017132605">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesEmailExist.js#makeQuery#20;</node>
     <node x="1842.049513634453" y="158.1242550141302">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesUserExist.js#makeQuery#20;</node>
     <node x="1835.867517930489" y="265.3187482771648">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesUsernameExist.js#makeQuery#20;</node>
+    <node x="1753.5692170288778" y="-288.85918428103605">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/game/getAnswersForQuestion.js#makeQuery#20;</node>
     <node x="1821.5695292564014" y="-69.98841829186475">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/getIdOfUser.js#makeQuery#20;</node>
+    <node x="1826.2890741292051" y="756.5525454004168">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/game/getQuestionsForTopic.js#makeQuery#20;</node>
+    <node x="1821.7889252753794" y="-170.48228639476034">E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/game/getTopics.js#makeQuery#20;</node>
     <node x="3057.93957509061" y="243.53535636152327">E:/repos/PlayBook/PlayBookServer/node_modules/mysql/index.js</node>
     <node x="-761.133010020952" y="1664.7211806355217">E:/repos/PlayBook/PlayBookServer/node_modules/websocket/lib/websocket.js#server#23;</node>
     <node x="-807.6375641054448" y="1472.2627908968864">E:/repos/PlayBook/PlayBookServer/src/index.js#WebSocketServer#53;E:/repos/PlayBook/PlayBookServer/src/index.js#http#88;E:/repos/PlayBook/PlayBookServer/src/index.js#serverInformationEmitter#118;E:/repos/PlayBook/PlayBookServer/src/index.js#userService#195;</node>
@@ -36,23 +40,7 @@
   </nodes>
   <notes />
   <edges>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesEmailExist.js#makeQuery#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/services/UserService.js#User#55;E:/repos/PlayBook/PlayBookServer/src/services/UserService.js#uuidV4#20;" target="E:/repos/PlayBook/PlayBookServer/node_modules/uuid/v4.js">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/entity/User.js#AuthenticationHandler#20;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#GameHandler#118;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#MessageEmitter#186;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/GameHandler.js#MultiJHandler#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/GameHandler.js#MultiJHandler#20;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJHandler.js#MultiJJoinHandler#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#DatabaseHelper#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;">
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/actions/DoesUserExist.js#DatabaseHelper#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -60,15 +48,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/makeQuery.js#databaseConnectionProvider#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseConnectionProvider.js#mysql#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
     <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/getIdOfUser.js#makeQuery#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/makeQuery.js#databaseConnectionProvider#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/index.js#WebSocketServer#53;E:/repos/PlayBook/PlayBookServer/src/index.js#http#88;E:/repos/PlayBook/PlayBookServer/src/index.js#serverInformationEmitter#118;E:/repos/PlayBook/PlayBookServer/src/index.js#userService#195;" target="E:/repos/PlayBook/PlayBookServer/src/util/ServerInformationEmitter.js#EventEmitter#20;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -76,23 +56,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesUserExist.js#makeQuery#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/makeQuery.js#databaseConnectionProvider#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/getIdOfUser.js#makeQuery#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJHandler.js#MultiJJoinHandler#20;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#DatabaseHelper#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
     <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DatabaseHelper#117;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DoesUserExist#55;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#uuidV4#20;" target="E:/repos/PlayBook/PlayBookServer/src/actions/DoesUserExist.js#DatabaseHelper#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/LoginHandler.js#DatabaseHelper#56;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/LoginHandler.js#uuidV4#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -112,23 +76,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesUserExist.js#makeQuery#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DatabaseHelper#117;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DoesUserExist#55;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#uuidV4#20;" target="E:/repos/PlayBook/PlayBookServer/node_modules/uuid/v4.js">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DatabaseHelper#117;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DoesUserExist#55;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#uuidV4#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
     <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DatabaseHelper#117;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DoesUserExist#55;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#uuidV4#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/checkUsernameAndPassword.js#makeQuery#20;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -144,19 +92,11 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/DoesUsernameExistHandler.js#DoesUserExist#20;">
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#DatabaseHelper#20;E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#MultiJService#103;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/session/setSessionKey.js#makeQuery#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/actions/DoesUserExist.js#DatabaseHelper#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/entity/User.js#AuthenticationHandler#20;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#GameHandler#118;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#MessageEmitter#186;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;">
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/checkUsernameAndPassword.js#makeQuery#20;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -164,23 +104,15 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/entity/User.js#AuthenticationHandler#20;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#GameHandler#118;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#MessageEmitter#186;" target="E:/repos/PlayBook/PlayBookServer/src/util/MessageEmitter.js#EventEmitter#20;">
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/createUser.js#makeQuery#20;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/LoginHandler.js#DatabaseHelper#56;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/LoginHandler.js#uuidV4#20;">
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/game/getAnswersForQuestion.js#makeQuery#20;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesUsernameExist.js#makeQuery#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/createUser.js#makeQuery#20;">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseConnectionProvider.js#mysql#20;" target="E:/repos/PlayBook/PlayBookServer/node_modules/mysql/index.js">
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJHandler.js#MultiJJoinHandler#20;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#DatabaseHelper#20;E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#MultiJService#103;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -192,7 +124,107 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/game/getTopics.js#makeQuery#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/makeQuery.js#databaseConnectionProvider#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
     <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/session/setSessionKey.js#makeQuery#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/makeQuery.js#databaseConnectionProvider#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesUserExist.js#makeQuery#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/getIdOfUser.js#makeQuery#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/DoesEmailExistHandler.js#DoesUserExist#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/services/UserService.js#User#55;E:/repos/PlayBook/PlayBookServer/src/services/UserService.js#uuidV4#20;" target="E:/repos/PlayBook/PlayBookServer/node_modules/uuid/v4.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/entity/User.js#AuthenticationHandler#20;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#GameHandler#118;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#MessageEmitter#186;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/GameHandler.js#MultiJHandler#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/game/getAnswersForQuestion.js#makeQuery#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/makeQuery.js#databaseConnectionProvider#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/session/setSessionKey.js#makeQuery#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/GameHandler.js#MultiJHandler#20;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJHandler.js#MultiJJoinHandler#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/makeQuery.js#databaseConnectionProvider#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseConnectionProvider.js#mysql#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/index.js#WebSocketServer#53;E:/repos/PlayBook/PlayBookServer/src/index.js#http#88;E:/repos/PlayBook/PlayBookServer/src/index.js#serverInformationEmitter#118;E:/repos/PlayBook/PlayBookServer/src/index.js#userService#195;" target="E:/repos/PlayBook/PlayBookServer/src/util/ServerInformationEmitter.js#EventEmitter#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesUserExist.js#makeQuery#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/makeQuery.js#databaseConnectionProvider#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/LoginHandler.js#DatabaseHelper#56;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/LoginHandler.js#uuidV4#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DatabaseHelper#117;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DoesUserExist#55;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#uuidV4#20;" target="E:/repos/PlayBook/PlayBookServer/node_modules/uuid/v4.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/DoesUsernameExistHandler.js#DoesUserExist#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/game/getTopics.js#makeQuery#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/entity/User.js#AuthenticationHandler#20;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#GameHandler#118;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#MessageEmitter#186;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#DatabaseHelper#20;E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#MultiJService#103;" target="E:/repos/PlayBook/PlayBookServer/src/services/gameServices/MultiJService.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesUsernameExist.js#makeQuery#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DatabaseHelper#117;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#DoesUserExist#55;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/RegisterHandler.js#uuidV4#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/game/getQuestionsForTopic.js#makeQuery#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/entity/User.js#AuthenticationHandler#20;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#GameHandler#118;E:/repos/PlayBook/PlayBookServer/src/entity/User.js#MessageEmitter#186;" target="E:/repos/PlayBook/PlayBookServer/src/util/MessageEmitter.js#EventEmitter#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/LoginHandler.js#DatabaseHelper#56;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/LoginHandler.js#uuidV4#20;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseConnectionProvider.js#mysql#20;" target="E:/repos/PlayBook/PlayBookServer/node_modules/mysql/index.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#checkUsernameAndPassword#28;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#createUser#280;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesEmailExist#160;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUserExist#105;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#doesUsernameExist#217;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getAnswersForQuestion#457;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getIdOfUser#329;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getQuestionsForTopic#528;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#getTopics#597;E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/DatabaseHelper.js#setSessionKey#391;" target="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/user/doesEmailExist.js#makeQuery#20;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -200,7 +232,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesEmailExistHandler#122;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#DoesUsernameExistHandler#188;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LoginHandler#20;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#LogoutHandler#260;E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/AuthenticationHandler.js#RegisterHandler#68;" target="E:/repos/PlayBook/PlayBookServer/src/handlers/AuthenticationHandler/DoesEmailExistHandler.js#DoesUserExist#20;">
+    <edge source="E:/repos/PlayBook/PlayBookServer/src/database/DatabaseHelper/game/getQuestionsForTopic.js#makeQuery#20;" target="E:/repos/PlayBook/PlayBookServer/src/database/makeQuery.js#databaseConnectionProvider#20;">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -209,8 +241,10 @@
       <point x="0.0" y="0.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.3812712826333712" x="1672.0975636509288" y="557.3132391481475" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="0.40000000000000013" x="1532.297746636613" y="848.642460199322" />
+  <SelectedNodes>
+    <node>E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#DatabaseHelper#20;E:/repos/PlayBook/PlayBookServer/src/handlers/GameHandler/MultiJHandler/MultiJJoinHandler.js#MultiJService#103;</node>
+  </SelectedNodes>
   <Categories>
     <Category>All</Category>
   </Categories>

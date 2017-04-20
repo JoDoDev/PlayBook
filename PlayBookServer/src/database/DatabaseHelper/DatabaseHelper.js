@@ -8,6 +8,10 @@ const createUser = require("./user/createUser");
 const getIdOfUser = require("./user/getIdOfUser");
 // Session
 const setSessionKey = require("./session/setSessionKey");
+// Game
+const getAnswersForQuestion = require("./game/getAnswersForQuestion");
+const getQuestionsForTopic = require("./game/getQuestionsForTopic");
+const getTopics = require("./game/getTopics");
 
 
 module.exports = class DatabaseHelper {
@@ -48,4 +52,19 @@ module.exports = class DatabaseHelper {
     return await setSessionKey(userId, SessionKey);
   }
 
+  /*
+    Game
+  */
+
+  static async getAnswersForQuestion (questionId) {
+    return await getAnswersForQuestion(questionId);
+  }
+
+  static async getQuestionsForTopic (topicId, numQuestions) {
+    return await getQuestionsForTopic(topicId, numQuestions);
+  }
+
+  static async getTopics () {
+    return await getTopics();
+  }
 };
