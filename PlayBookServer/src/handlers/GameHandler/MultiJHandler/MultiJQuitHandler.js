@@ -11,21 +11,21 @@ module.exports = class MultiJQuitHandler {
       this.user.messageEmitter.on("MULTIJ_QUIT",async (data) => {
         try {
           if (this.user.loggedIn === false) {
-            this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject( "You need to be logged in"));
+            this.user.sendUTF(MultiJFinishHandler.getErrorReturnObject( "You need to be logged in"));
             return;
           }
           if (this.multiJHandler.isJoined === false) {
-            this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("You are not joined"));
+            this.user.sendUTF(MultiJFinishHandler.getErrorReturnObject("You are not joined"));
             return;
           }
 
 
           this.multiJHandler.multiJService = null;
           this.multiJHandler.isJoined = false;
-          this.user.sendUTF(MultiJJoinHandler.getReturnObject());
+          this.user.sendUTF(MultiJFinishHandler.getReturnObject());
         } catch (e) {
           console.error("MULTIJ_QUIT", e);
-          this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("Unexpected Error occurred"));
+          this.user.sendUTF(MultiJFinishHandler.getErrorReturnObject("Unexpected Error occurred"));
         }
       });
     }

@@ -14,6 +14,10 @@ module.exports = class MultiJAnswerQuestionHandler {
           this.user.sendUTF(MultiJAnswerQuestionHandler.getErrorReturnObject("Object does not have the needed properties"));
           return;
         }
+        if (this.user.loggedIn === false) {
+          this.user.sendUTF(MultiJAnswerQuestionHandler.getErrorReturnObject( "You need to be logged in"));
+          return;
+        }
         if (this.multiJHandler.isJoined === false) {
           this.user.sendUTF(MultiJAnswerQuestionHandler.getErrorReturnObject("You are not joined"));
           return;

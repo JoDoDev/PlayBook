@@ -50,7 +50,7 @@ module.exports = class MultiJJoinHandler {
           this.multiJHandler.isJoined = true;
           this.user.sendUTF(MultiJJoinHandler.getReturnObject(questions));
         } catch (e) {
-          console.error("MULTIJ_JOIN", e);
+          console.error("MULTIJ_JOIN_ERROR", e);
           this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject("Unexpected Error occurred"));
         }
       });

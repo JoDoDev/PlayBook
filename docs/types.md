@@ -363,6 +363,11 @@ Server:
 [[POINTS]] type number,
 [[YOUR_POINTS]] type number,
 [[TIME]] type number, in seconds
+[[YOUR_ANSWER_ID]] type number
+[[YOUR_ANSWER_TEXT]] type string
+[[CORRECT]] type boolean
+[[QUESTION_TEXT]] type string
+
   
 ```JSON  
 {   
@@ -374,9 +379,9 @@ Server:
         "question": {
             "[[QUESTION_ID]]": {
                 "yourAnswerId": "[[YOUR_ANSWER_ID]]",
-                "yourAnswerText": "[[YOUR_ANSWER_Text]]",
+                "yourAnswerText": "[[YOUR_ANSWER_TEXT]]",
                 "correct": "[[CORRECT]]",
-                "questionText": "[[QUESTION]]"
+                "questionText": "[[QUESTION_TEXT]]"
             }
         }
     }  
