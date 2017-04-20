@@ -46,7 +46,12 @@ module.exports = class User {
     if (typeof data === 'object') {
       data = JSON.stringify(data);
     }
-    console.log("To Client : " + data.type, data);
+
+    let dataTemp;
+    if (typeof data === 'string') {
+      dataTemp = JSON.parse(data);
+    }
+    console.log("To Client : " + dataTemp.type, dataTemp);
     this.connection.sendUTF(data);
   }
 
