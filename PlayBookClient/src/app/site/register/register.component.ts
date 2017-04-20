@@ -1,5 +1,5 @@
 import {AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {WebsocketService} from '../../services/websocket.service';
 import {Subscription} from 'rxjs/Subscription';
 import {UserService} from '../../services/user.service';
@@ -31,7 +31,7 @@ import {modelGroupProvider} from '@angular/forms/src/directives/ng_model_group';
     }
   `]
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
   //TODO: AsyncValidate -> username/email already used
   //TODO: Write errormessage if input is incorrect
   private isUsernameTaken: boolean = false;
@@ -71,6 +71,7 @@ export class RegisterComponent implements OnInit {
       this.userService.email = data.data.email;
       this.userService.sessionKey = data.data.sessionkey;
       this.userService.loggdin = true;
+      this.router.navigate(['/home']);
     };
     this.registerSubscriptionErr = (data) => {
       console.error(data);
@@ -176,5 +177,12 @@ export class RegisterComponent implements OnInit {
       'required':      'Password is required.'
     }
   };
+
+  ngOnDestroy() {
+    this.websocketService.messageEmitter.removeListener("DOES_EMAIL_EXIST", this.isEmailTakenSubscription);
+    this.websocketService.messageEmitter.removeListener("DOES_USERNAME_EXIST", this.isUsernameTakenSubscription);
+    this.websocketService.messageEmitter.removeListener("REGISTER", this.registerSubscription);
+    this.websocketService.messageEmitter.removeListener("REGISTER_ERROR", this.registerSubscriptionErr);
+  }
 }
 
