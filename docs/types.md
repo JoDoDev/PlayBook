@@ -244,3 +244,125 @@ Server:
 }
 ```  
   
+  
+#### MULTIJ_GET_COLLECTIONS  
+Client:  
+  
+```JSON  
+{   
+    "type": "MULTIJ_GET_COLLECTIONS",  
+    "data": {}  
+}
+```  
+  
+Server:  
+  
+[[COLLECTION_ID]] type number  
+[[COLLECTION_NAME]] type string
+  
+```JSON  
+{   
+    "type": "MULTIJ_GET_COLLECTIONS",  
+    "data": {
+      "[[COLLECTION_ID]]": "[[COLLECTION_NAME]]"
+    }  
+}
+```  
+  
+  
+#### MULTIJ_JOIN_GAME  
+Client:  
+  
+[[COLLECTION_ID]] type number, id of Collection
+  
+```JSON  
+{   
+    "type": "JOIN_GAME_MULTIJ",  
+    "data": {
+      "collection": "[[COLLECTION_ID]]"
+    }  
+}
+```  
+  
+Server:  
+  
+[[QUESTION_ID]] type number  
+[[QUESTION]] type string  
+[[ANSWER_ID]] type number  
+[[ANSWER]] type string  
+  
+```JSON  
+{   
+    "type": "JOIN_GAME_MULTIJ",  
+    "data": {
+      "questions": {
+        [[QUESTION_ID]] : {
+            "question": [[QUESTION]],
+            "answers": {
+                "[[ANSWER_ID]]": "[[ANSWER]]"
+            }
+        }
+      }
+    }  
+}
+```  
+  
+  
+#### MULTIJ_ANSWER_QUESTION
+Client:  
+  
+[[QUESTION_ID]] type number
+[[ANSWER_ID]] type number
+  
+```JSON  
+{   
+    "type": "MULTIJ_ANSWER_QUESTION",  
+    "data": {
+      "questionid": "[[QUESTION_ID]]",
+      "answerid": "[[ANSWER_ID]]"
+    }  
+}
+```  
+  
+  
+#### MULTIJ_QUIT  
+Client:  
+
+  
+```JSON  
+{   
+    "type": "MULTIJ_QUIT",  
+    "data": { }  
+}
+```  
+  
+Server:  
+
+```JSON  
+{   
+    "type": "MULTIJ_QUIT",  
+    "data": { }  
+}
+```  
+  
+  
+#### MULTIJ_FINISH  
+  
+Server:  
+  
+[[POINTS]] type number,
+[[YOUR_POINTS]] type number,
+[[TIME]] type number, in seconds
+  
+```JSON  
+{   
+    "type": "MULTIJ_QUIT",  
+    "data": {
+        "points": [[POINTS]],
+        "yourpoints": [[YOUR_POINTS]],
+        "time": [[TIME]]
+    }  
+}
+```  
+  
+  
