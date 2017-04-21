@@ -57,12 +57,14 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.isEmailTakenSubscription = (data) => {
       if (this.isEmailTaken !== data.data.exists ) {
         this.isEmailTaken = data.data.exists;
+        this.registerForm.controls.email.markAsTouched()
         this.registerForm.controls.email.updateValueAndValidity();
       }
     };
     this.isUsernameTakenSubscription = (data) => {
       if (this.isUsernameTaken !== data.data.exists ) {
         this.isUsernameTaken = data.data.exists;
+        this.registerForm.controls.username.markAsTouched()
         this.registerForm.controls.username.updateValueAndValidity();
       }
     };
