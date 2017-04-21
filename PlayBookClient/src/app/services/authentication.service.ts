@@ -18,12 +18,14 @@ export class AuthenticationService {
           this.userService.username = data.data.username;
           this.userService.email = data.data.email;
           this.userService.loggdin = true;
+          this.userService.loaded = true;
           this.userService.sessionKey = data.data.sessionkey;
           resolve(true);
         } else {
           this.websocketService.messageEmitter.removeListener("SESSION_LOGIN", onSessionLogin);
           this.websocketService.messageEmitter.removeListener("SESSION_LOGIN_ERROR", onSessionLoginError);
           this.userService.loggdin = false;
+          this.userService.loaded = true;
           resolve(false);
         }
       };

@@ -6,6 +6,7 @@ export class UserService {
   public username: string;
   public email: string;
   public loggdin: boolean = false;
+  public loaded: boolean = false;
 
   private _sessionKey: string;
   get sessionKey(): string {

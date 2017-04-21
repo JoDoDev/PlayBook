@@ -75,6 +75,7 @@ export class LoginComponent implements OnInit , OnDestroy{
     this.userService.email = data.data.email;
     this.userService.sessionKey = data.data.sessionkey;
     this.userService.loggdin = true;
+    this.userService.loaded = true;
     this.navigateToHome()
   }
 

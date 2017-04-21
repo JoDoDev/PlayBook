@@ -18,6 +18,7 @@ import { MultiJComponent } from './components/games/multi-j/multi-j.component';
 import {IsAuthGuardService} from './guards/is-auth-guard.service';
 import {AuthenticationService} from './services/authentication.service';
 import { LayoutComponent } from './components/layout/layout.component';
+import {IsNotAuthGuardService} from './guards/is-not-auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LayoutComponent } from './components/layout/layout.component';
     WebsocketService,
     UserService,
     IsAuthGuardService,
+    IsNotAuthGuardService,
     AuthenticationService
   ],
   entryComponents: [],
