@@ -4,7 +4,7 @@ import {WebsocketService} from '../../services/websocket.service';
 import {Subscription} from 'rxjs/Subscription';
 import {UserService} from '../../services/user.service';
 import {Router} from '@angular/router';
-import {modelGroupProvider} from '@angular/forms/src/directives/ng_model_group';
+import { CustomValidation } from '../../util/CustomValidation';
 import {MdSnackBar, MdSnackBarConfig} from '@angular/material';
 
 @Component({
@@ -88,7 +88,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   buildForm(): void {
     this.registerForm = this.fb.group({
       'username': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100),this.isUsernameTakenValidator()]],
-      'email': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100), Validators.email, this.isEmailTakenValidator()]],
+      'email': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100), CustomValidation.email, this.isEmailTakenValidator()]],
       'password': ['', Validators.required]
     });
 
@@ -128,7 +128,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
     if (!this.registerForm) { return; }
     const form = this.registerForm;
     for (const field in this.formErrors) {
-      // clear previous error message (if any)
       this.formErrors[field] = '';
       const control = form.get(field);
       if (control && control.dirty && !control.valid) {
