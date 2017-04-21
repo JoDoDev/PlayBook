@@ -1,5 +1,6 @@
 "use strict";
 const MultiJHandler = require("./MultiJHandler/MultiJHandler");
+const GetTopicsHandler = require("./GetTopicsHandler");
 
 
 module.exports = class GameHandler {
@@ -7,6 +8,7 @@ module.exports = class GameHandler {
       this.user = user;
 
       this.multiJHandler = new MultiJHandler(this.user);
+      this.getTopicsHandler = new GetTopicsHandler(this.user);
     }
 };
 

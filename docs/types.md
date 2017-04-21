@@ -284,7 +284,7 @@ Client:
   
 ```JSON  
 {   
-    "type": "MULTIJ_GET_TOPICS",  
+    "type": "GET_TOPICS",  
     "data": {}  
 }
 ```  
@@ -293,12 +293,18 @@ Server:
   
 [[TOPIC_ID]] type number  
 [[TOPIC_NAME]] type string
+[[TOPIC_Description]] type string
   
 ```JSON  
 {   
-    "type": "MULTIJ_GET_TOPICS",  
+    "type": "GET_TOPICS",  
     "data": {
-      "[[TOPIC_ID]]": "[[TOPIC_NAME]]"
+    "topics": {
+          "[[TOPIC_ID]]": {
+            "name": "[[TOPIC_NAME]]",
+            "description": "[[TOPIC_Description]]"
+          }
+      }
     }  
 }
 ```  

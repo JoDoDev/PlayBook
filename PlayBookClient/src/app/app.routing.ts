@@ -7,6 +7,7 @@ import {IsAuthGuardService} from './guards/is-auth-guard.service';
 import {LayoutComponent} from './components/layout/layout.component';
 import {MultiJComponent} from './components/games/multi-j/multi-j.component';
 import {IsNotAuthGuardService} from './guards/is-not-auth-guard.service';
+import {MultiJGameComponent} from './components/games/multi-j/multi-jgame.component';
 
 const APP_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const APP_ROUTES: Routes = [
     { path: 'game', redirectTo: 'home', pathMatch: 'full' },
     { path: 'game', children: [
       { path: 'multiJ', component: MultiJComponent},
+      { path: 'multiJ/:topic', component: MultiJGameComponent},
     ]},
   ]},
   { path: 'login', component: LoginComponent, canActivate: [ IsNotAuthGuardService ] },

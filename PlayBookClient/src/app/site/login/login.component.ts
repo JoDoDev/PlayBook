@@ -3,6 +3,7 @@ import {WebsocketService} from '../../services/websocket.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../services/user.service';
 import {Router} from '@angular/router';
+import {MdSnackBar, MdSnackBarConfig} from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -39,7 +40,8 @@ export class LoginComponent implements OnInit , OnDestroy{
   constructor(
     @Inject(WebsocketService) private websocketService,
     @Inject(UserService) private userService,
-    private router: Router
+    private router: Router,
+    private snackBar: MdSnackBar
   ) { }
 
   ngOnInit() {
@@ -80,6 +82,10 @@ export class LoginComponent implements OnInit , OnDestroy{
   }
 
   private onLoginError(data) {
+    let config = new MdSnackBarConfig();
+    config.duration = 500000;
+    config.extraClasses = ["errorSnackBar"];
+    this.snackBar.open(data.cause, "", config);
     console.error("onLoginError", data);
   }
 

@@ -19,6 +19,8 @@ import {IsAuthGuardService} from './guards/is-auth-guard.service';
 import {AuthenticationService} from './services/authentication.service';
 import { LayoutComponent } from './components/layout/layout.component';
 import {IsNotAuthGuardService} from './guards/is-not-auth-guard.service';
+import { KeyobjectPipe } from './pipes/keyobject.pipe';
+import { MultiJGameComponent } from './components/games/multi-j/multi-jgame.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {IsNotAuthGuardService} from './guards/is-not-auth-guard.service';
     NotfoundComponent,
     GameComponent,
     MultiJComponent,
-    LayoutComponent
+    LayoutComponent,
+    KeyobjectPipe,
+    MultiJGameComponent
   ],
   imports: [
     BrowserModule,
