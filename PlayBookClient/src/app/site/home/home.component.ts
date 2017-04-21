@@ -6,8 +6,14 @@ import {WebsocketService} from '../../services/websocket.service';
   templateUrl: './home.component.html',
   styles: [`
     .root-card {
-      width: 70%;
+      width: 80%;
       margin: 30px auto;
+    }
+
+    @media screen and (max-width: 600px) {
+      .root-card {
+        width: 100%;
+      }
     }
   `]
 })
