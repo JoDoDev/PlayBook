@@ -8,6 +8,7 @@ const createUser = require("./user/createUser");
 const getIdOfUser = require("./user/getIdOfUser");
 // Session
 const setSessionKey = require("./session/setSessionKey");
+const isSessionKeyValid = require("./session/isSessionKeyValid");
 // Game
 const getQuestionsForTopic = require("./game/getQuestionsForTopic");
 const getTopics = require("./game/getTopics");
@@ -49,6 +50,10 @@ module.exports = class DatabaseHelper {
 
   static async setSessionKey (userId, SessionKey) {
     return await setSessionKey(userId, SessionKey);
+  }
+
+  static async isSessionKeyValid (sessionKey, daysValid = 3) {
+    return await isSessionKeyValid(sessionKey, daysValid);
   }
 
   /*

@@ -9,6 +9,7 @@ export class UserService {
 
   private _sessionKey: string;
   get sessionKey(): string {
+    this._sessionKey = getCookie("sessionkey");
     return this._sessionKey;
   }
   set sessionKey(value: string) {

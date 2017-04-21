@@ -14,6 +14,9 @@ import { NotfoundComponent } from './site/notfound/notfound.component';
 import { GameComponent } from './site/home/game.component';
 import {WebsocketService} from './services/websocket.service';
 import {UserService} from './services/user.service';
+import { MultiJComponent } from './games/multi-j/multi-j.component';
+import {IsAuthGuardService} from './guards/is-auth-guard.service';
+import {AuthenticationService} from './services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {UserService} from './services/user.service';
     LoginComponent,
     RegisterComponent,
     NotfoundComponent,
-    GameComponent
+    GameComponent,
+    MultiJComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import {UserService} from './services/user.service';
   ],
   providers: [
     WebsocketService,
-    UserService
+    UserService,
+    IsAuthGuardService,
+    AuthenticationService
   ],
   entryComponents: [],
   bootstrap: [AppComponent]

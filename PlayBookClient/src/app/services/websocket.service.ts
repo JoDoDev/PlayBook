@@ -44,6 +44,26 @@ export class WebsocketService {
     if (typeof data !== 'string'){
       data = JSON.stringify(data);
     }
-    this.client.send(data);
+    if (this.client.readyState !== 1) {
+      this.sendOnLoad(data);
+    } else {
+      this.client.send(data);
+    }
   }
+
+  private sendOnLoad (message) {
+    this.waitForConnection(() => {
+      this.client.send(message);
+    }, 100);
+  };
+
+  private waitForConnection (callback, interval) {
+    if (this.client.readyState === 1) {
+      callback();
+    } else {
+      setTimeout(() => {
+        this.waitForConnection(callback, interval);
+      }, interval);
+    }
+  };
 }

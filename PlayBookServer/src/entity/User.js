@@ -24,13 +24,14 @@ module.exports = class User {
           }
         } catch (e) {
           if (e instanceof SyntaxError) {
+            console.error(message.utf8Data);
             this.sendUTF({
               "type": "JSON_SYNTAX_ERROR",
               "data": {},
               "cause": "Could not Transform data into Object"
             });
           } else {
-            console.log(e);
+            console.error(e);
           }
         }
       }

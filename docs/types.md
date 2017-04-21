@@ -88,10 +88,44 @@ Server:
         "valid": "[[VALID]]",
         "email": "[[EMAIL]]",
         "username": "[[USERNAME]]",
-        "sessionKey": "[[SESSIONKEY]]"
+        "sessionkey": "[[SESSIONKEY]]"
     }  
 }
 ```
+
+#### SESSION_LOGIN
+Client:  
+
+[[SESSION_KEY]] type String
+  
+```JSON
+{   
+    "type": "SESSION_LOGIN",  
+    "data": {  
+        "sessionkey": "[[SESSION_KEY]]"
+    }  
+}
+```
+
+Server:  
+
+[[VALID]] type Boolean
+[[EMAIL]] type String, Is an Empty String when [[VALID]] is false.  
+[[USERNAME]] type String, Is an Empty String when [[VALID]] is false.  
+[[SESSIONKEY]] type String, Is an Empty String when [[VALID]] is false.  
+  
+```JSON
+{   
+    "type": "SESSION_LOGIN",  
+    "data": {  
+        "valid": "[[VALID]]",
+        "email": "[[EMAIL]]",
+        "username": "[[USERNAME]]",
+        "sessionkey": "[[SESSIONKEY]]"
+    }  
+}
+```
+
 
 Server Error:  
   

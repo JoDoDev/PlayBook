@@ -69,7 +69,7 @@ module.exports = class LoginHandler {
       type: "LOGIN",
       data: {
         valid: valid,
-        sessionKey: sessionKey,
+        sessionkey: sessionKey,
         username: username,
         email: email
       }
