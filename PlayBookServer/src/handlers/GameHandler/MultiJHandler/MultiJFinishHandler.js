@@ -14,8 +14,8 @@ module.exports = class MultiJFinishHandler {
             this.user.sendUTF(MultiJJoinHandler.getErrorReturnObject( "You need to be logged in"));
             return;
           }
-          if (this.multiJHandler.isJoined === true) {
-            this.user.sendUTF(MultiJFinishHandler.getErrorReturnObject("You are already joined"));
+          if (this.multiJHandler.isJoined === false) {
+            this.user.sendUTF(MultiJFinishHandler.getErrorReturnObject("You are not in a game"));
             return;
           }
           if (this.multiJHandler.multiJService.finished === false) {
@@ -23,13 +23,13 @@ module.exports = class MultiJFinishHandler {
             return;
           }
 
-
           this.user.sendUTF(MultiJFinishHandler.getReturnObject(
-            this.multiJHandler.multiJService.points,
             this.multiJHandler.multiJService.questionAmount,
+            this.multiJHandler.multiJService.points,
             this.multiJHandler.multiJService.time,
             this.multiJHandler.multiJService.getAnsweredQuestionsReturnObject()
           ));
+
           this.multiJHandler.isJoined = false;
           this.multiJHandler.multiJService = null;
         } catch (e) {

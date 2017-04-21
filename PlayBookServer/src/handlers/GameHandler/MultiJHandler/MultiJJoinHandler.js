@@ -23,27 +23,27 @@ module.exports = class MultiJJoinHandler {
             return;
           }
 
-          let qResultQuestions = await DatabaseHelper.getQuestionsForTopic(1,6);
+          let qResultQuestions = await DatabaseHelper.getQuestionsForTopic(1,2);
 
           var questions = {};
           var questionsAdmin = {};
           for (var question of qResultQuestions) {
-            let qResultAnswer = await DatabaseHelper.getAnswersForQuestion(question.questionId);
-            questions[question.questionId] = {
-              questionText: question.questionText
-            };
-            questionsAdmin[question.questionId] = {
-              questionText: question.questionText
-            };
-            for (var answer of qResultAnswer) {
-              questions[question.questionId][answer.answerId] = {
-                AnswerText: answer.answerText
+            if (typeof questions[question.questionId] === 'undefined') {
+              questions[question.questionId] = {
+                questionText: question.questionText
               };
-              questionsAdmin[question.questionId][answer.answerId] = {
-                AnswerText: answer.answerText,
-                isCorrect: answer.isCorrect
+              questionsAdmin[question.questionId] = {
+                questionText: question.questionText
               };
             }
+
+            questions[question.questionId][question.answerId] = {
+              AnswerText: question.answerText
+            };
+            questionsAdmin[question.questionId][question.answerId] = {
+              AnswerText: question.answerText,
+              isCorrect: question.isCorrect
+            };
           }
 
           this.multiJHandler.multiJService = new MultiJService(questionsAdmin);

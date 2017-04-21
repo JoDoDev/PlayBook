@@ -4,7 +4,6 @@ module.exports = class MultiJService {
   constructor(questions) {
     this.questions = questions;
     this.questionAmount = Object.keys(this.questions).length;
-    this.points = 0;
     this.startTime = Date.now();
     this.answeredQuestions = {};
     this.finished = false;
@@ -16,7 +15,8 @@ module.exports = class MultiJService {
         this.answeredQuestions[questionId] = {
           yourAnswerId: answerId,
           yourAnswerText: this.questions[questionId][answerId].AnswerText,
-          questionText: this.questions[questionId].questionText
+          questionText: this.questions[questionId].questionText,
+          correct: this.questions[questionId][answerId].isCorrect
         }
       }
     }
@@ -27,11 +27,21 @@ module.exports = class MultiJService {
   }
 
   getAnsweredQuestionsReturnObject() {
-
+    return this.answeredQuestions;
   }
 
   get time() {
     return (this.startTime - Date.now()) * 1000;
+  }
+
+  get points() {
+    var yourPoints = 0;
+    for (let answeredQuestion in this.answeredQuestions) {
+      if (answeredQuestion.correct) {
+        yourPoints++;
+      }
+    }
+    return yourPoints;
   }
 
 

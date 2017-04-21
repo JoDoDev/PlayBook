@@ -19,7 +19,7 @@ module.exports = class MultiJAnswerQuestionHandler {
           return;
         }
         if (this.multiJHandler.isJoined === false) {
-          this.user.sendUTF(MultiJAnswerQuestionHandler.getErrorReturnObject("You are not joined"));
+          this.user.sendUTF(MultiJAnswerQuestionHandler.getErrorReturnObject("You are not in a MultiJ game"));
           return;
         }
 
