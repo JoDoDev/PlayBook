@@ -5,6 +5,7 @@ import {Subscription} from 'rxjs/Subscription';
 import {UserService} from '../../services/user.service';
 import {Router} from '@angular/router';
 import {modelGroupProvider} from '@angular/forms/src/directives/ng_model_group';
+import {MdSnackBar, MdSnackBarConfig} from '@angular/material';
 
 @Component({
   selector: 'app-register',
@@ -39,7 +40,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
   private isUsernameTakenSubscription;
   private isEmailTakenSubscription;
   private registerSubscription;
-  private registerSubscriptionErr;
   private registerFormSubscription: Subscription;
   registerForm: FormGroup;
 
@@ -47,7 +47,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
     @Inject(WebsocketService) private websocketService,
     @Inject(UserService) private userService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private snackBar: MdSnackBar
   ) { }
 
   ngOnInit() {
@@ -73,14 +74,13 @@ export class RegisterComponent implements OnInit, OnDestroy {
       this.userService.loggdin = true;
       this.router.navigate(['/home']);
     };
-    this.registerSubscriptionErr = (data) => {
-      console.error(data);
-    };
 
     this.websocketService.messageEmitter.on("DOES_EMAIL_EXIST", this.isEmailTakenSubscription);
     this.websocketService.messageEmitter.on("DOES_USERNAME_EXIST", this.isUsernameTakenSubscription);
     this.websocketService.messageEmitter.on("REGISTER", this.registerSubscription);
-    this.websocketService.messageEmitter.on("REGISTER_ERROR", this.registerSubscriptionErr);
+    this.websocketService.messageEmitter.on("DOES_EMAIL_EXIST_ERROR", this.onError.bind(this));
+    this.websocketService.messageEmitter.on("DOES_USERNAME_EXIST_ERROR", this.onError.bind(this));
+    this.websocketService.messageEmitter.on("REGISTER_ERROR", this.onError.bind(this));
   }
 
   buildForm(): void {
@@ -182,7 +182,16 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.websocketService.messageEmitter.removeListener("DOES_EMAIL_EXIST", this.isEmailTakenSubscription);
     this.websocketService.messageEmitter.removeListener("DOES_USERNAME_EXIST", this.isUsernameTakenSubscription);
     this.websocketService.messageEmitter.removeListener("REGISTER", this.registerSubscription);
-    this.websocketService.messageEmitter.removeListener("REGISTER_ERROR", this.registerSubscriptionErr);
+    this.websocketService.messageEmitter.removeListener("DOES_EMAIL_EXIST_ERROR", this.onError);
+    this.websocketService.messageEmitter.removeListener("DOES_USERNAME_EXIST_ERROR", this.onError);
+    this.websocketService.messageEmitter.removeListener("REGISTER_ERROR", this.onError);
+  }
+
+  onError(data) {
+    let config = new MdSnackBarConfig();
+    config.duration = 500000;
+    config.extraClasses = ["errorSnackBar"];
+    this.snackBar.open(data.cause, "", config);
   }
 }
 
