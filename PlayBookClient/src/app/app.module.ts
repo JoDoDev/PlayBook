@@ -14,9 +14,10 @@ import { NotfoundComponent } from './site/notfound/notfound.component';
 import { GameComponent } from './site/home/game.component';
 import {WebsocketService} from './services/websocket.service';
 import {UserService} from './services/user.service';
-import { MultiJComponent } from './games/multi-j/multi-j.component';
+import { MultiJComponent } from './components/games/multi-j/multi-j.component';
 import {IsAuthGuardService} from './guards/is-auth-guard.service';
 import {AuthenticationService} from './services/authentication.service';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {AuthenticationService} from './services/authentication.service';
     RegisterComponent,
     NotfoundComponent,
     GameComponent,
-    MultiJComponent
+    MultiJComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

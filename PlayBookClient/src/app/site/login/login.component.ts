@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit , OnDestroy{
     }
     this.userService.username = data.data.username;
     this.userService.email = data.data.email;
-    this.userService.sessionkey = data.data.sessionKey;
+    this.userService.sessionKey = data.data.sessionkey;
     this.userService.loggdin = true;
     this.navigateToHome()
   }

@@ -4,12 +4,15 @@ import {HomeComponent} from "./site/home/home.component";
 import {RegisterComponent} from "./site/register/register.component";
 import {NotfoundComponent} from './site/notfound/notfound.component';
 import {IsAuthGuardService} from './guards/is-auth-guard.service';
+import {LayoutComponent} from './components/layout/layout.component';
 
 const APP_ROUTES: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: LayoutComponent, canActivate: [ IsAuthGuardService ], children: [
+    { path: 'home', component: HomeComponent},
+  ]},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent , canActivate: [ IsAuthGuardService ]},
   { path: '404', component: NotfoundComponent },
   {path: '**', redirectTo: '404'}
 ];
