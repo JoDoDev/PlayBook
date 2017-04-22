@@ -13,10 +13,6 @@ module.exports = class SessionLoginHandler {
           if (!SessionLoginHandler.hasProperties(data)) {
             this.user.sendUTF(SessionLoginHandler.getErrorReturnObject("", "Object does not have the needed properties"));
           }
-          if (this.user.loggedIn === true) {
-            this.user.sendUTF(SessionLoginHandler.getErrorReturnObject(data.data.username, "You are already logged in"));
-            return;
-          }
 
           let qResult;
           qResult = await DatabaseHelper.isSessionKeyValid(data.data.sessionkey, 3);

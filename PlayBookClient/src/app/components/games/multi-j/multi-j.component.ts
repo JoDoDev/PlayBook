@@ -53,7 +53,7 @@ export class MultiJComponent implements OnInit , OnDestroy {
     console.log(value);
     for( let topic in this.topics) {
       if (this.topics[topic].name === value) {
-        this.router.navigate(['./',value], {relativeTo: this.activatedRoute});
+        this.router.navigate(['./', topic], {relativeTo: this.activatedRoute});
         return;
       }
     }

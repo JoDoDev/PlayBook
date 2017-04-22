@@ -23,7 +23,7 @@ module.exports = class MultiJJoinHandler {
             return;
           }
 
-          let qResultQuestions = await DatabaseHelper.getQuestionsForTopic(1,2);
+          let qResultQuestions = await DatabaseHelper.getQuestionsForTopic(1,8);
 
           var questions = {};
           var questionsAdmin = {};
