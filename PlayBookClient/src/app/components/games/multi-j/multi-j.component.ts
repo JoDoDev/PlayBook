@@ -23,7 +23,6 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class MultiJComponent implements OnInit , OnDestroy {
   private topics = {};
-
   private onGetTopics;
 
   constructor(
