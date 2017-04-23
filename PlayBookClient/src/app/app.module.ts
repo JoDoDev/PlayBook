@@ -49,7 +49,8 @@ import { MultiJGameComponent } from './components/games/multi-j/multi-jgame.comp
     UserService,
     IsAuthGuardService,
     IsNotAuthGuardService,
-    AuthenticationService
+    AuthenticationService,
+    KeyobjectPipe
   ],
   entryComponents: [],
   bootstrap: [AppComponent]

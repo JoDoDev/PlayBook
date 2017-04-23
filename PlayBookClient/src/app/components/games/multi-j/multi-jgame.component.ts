@@ -1,9 +1,11 @@
 import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {MdSnackBar} from '@angular/material';
+import {MdRadioChange, MdSnackBar} from '@angular/material';
 import {UserService} from '../../../services/user.service';
 import {WebsocketService} from '../../../services/websocket.service';
 import {FormControl} from '@angular/forms';
+import {KeyobjectPipe} from '../../../pipes/keyobject.pipe';
+import randomizeArray from '../../../util/randomizeArray';
 
 @Component({
   selector: 'app-multi-jgame',
@@ -21,14 +23,21 @@ import {FormControl} from '@angular/forms';
       }
     }
 
+    .spacer {
+      flex: 1 1 auto;
+    }
+
   `]
 })
 export class MultiJGameComponent implements OnInit, OnDestroy {
   private topicId: number = -1;
+  private questions: any[];
+  private activeQuestion;
   private onJoin;
   private onFinish;
   private onAnswerQuestion;
   private onSessionLogin;
+
 
 
   constructor(
@@ -36,9 +45,15 @@ export class MultiJGameComponent implements OnInit, OnDestroy {
     @Inject(UserService) private userService,
     private router: Router,
     private snackBar: MdSnackBar,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private keyobjectPipe: KeyobjectPipe
   ) {
-    this.onJoin = (data) => {};
+    this.onJoin = (data) => {
+      console.log("rec Data", data);
+      this.questions = randomizeArray(this.keyobjectPipe.transform(data.data.questions, []));
+      this.activeQuestion = this.questions[0]
+      console.log(this.activeQuestion);
+    };
     this.onFinish = (data) => {};
     this.onAnswerQuestion = (data) => {};
     this.onSessionLogin =  () => {
@@ -51,6 +66,9 @@ export class MultiJGameComponent implements OnInit, OnDestroy {
     };
 
     this.websocketService.messageEmitter.once('SESSION_LOGIN', this.onSessionLogin);
+    this.websocketService.messageEmitter.on('MULTIJ_JOIN', this.onJoin);
+    this.websocketService.messageEmitter.on('MULTIJ_JOIN_ERROR', this.onError);
+    this.websocketService.messageEmitter.on('SESSION_LOGIN_ERROR', this.onError);
 
     this.activatedRoute.params.subscribe((params: Params) => {
       let topic = params['topic'];
@@ -64,7 +82,7 @@ export class MultiJGameComponent implements OnInit, OnDestroy {
     this.websocketService.send({
       type: "SESSION_LOGIN",
       data: {
-        topic: this.userService.sessionKey
+        sessionkey: this.userService.sessionKey
       }
     })
   }
@@ -72,6 +90,12 @@ export class MultiJGameComponent implements OnInit, OnDestroy {
   onError() {
 
   }
+
+
+  onSelect(e: MdRadioChange ) {
+    console.log(e.value);
+  }
+
 
 
   ngOnDestroy(): void {

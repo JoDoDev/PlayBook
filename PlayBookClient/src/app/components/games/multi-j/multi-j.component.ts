@@ -25,6 +25,7 @@ export class MultiJComponent implements OnInit , OnDestroy {
   private topics = {};
   private onGetTopics;
 
+
   constructor(
     @Inject(WebsocketService) private websocketService,
     @Inject(UserService) private userService,
@@ -63,5 +64,6 @@ export class MultiJComponent implements OnInit , OnDestroy {
     this.websocketService.messageEmitter.removeListener("GET_TOPICS", this.onGetTopics);
     this.websocketService.messageEmitter.removeListener("GET_TOPICS_ERROR", this.onError);
   }
+
 
 }

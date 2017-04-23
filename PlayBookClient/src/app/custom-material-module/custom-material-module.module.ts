@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {
-  MdAutocompleteModule, MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdSnackBarModule,
-  MdToolbarModule
+  MdAutocompleteModule, MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdListModule, MdSnackBarModule,
+  MdToolbarModule, MdRadioModule, MdSelectModule
 } from '@angular/material';
 
 @NgModule({
@@ -12,7 +12,10 @@ import {
     MdSnackBarModule,
     MdToolbarModule,
     MdIconModule,
-    MdAutocompleteModule
+    MdAutocompleteModule,
+    MdListModule,
+    MdRadioModule,
+    MdSelectModule
   ],
   exports: [
     MdCardModule,
@@ -21,7 +24,10 @@ import {
     MdSnackBarModule,
     MdToolbarModule,
     MdIconModule,
-    MdAutocompleteModule
+    MdAutocompleteModule,
+    MdListModule,
+    MdRadioModule,
+    MdSelectModule
   ],
 })
 export class CustomMaterialModuleModule { }
