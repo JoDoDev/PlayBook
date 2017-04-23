@@ -32,7 +32,8 @@ import randomizeArray from '../../../util/randomizeArray';
 export class MultiJGameComponent implements OnInit, OnDestroy {
   private topicId: number = -1;
   private questions: any[];
-  private activeQuestion;
+  public activeQuestion;
+  public activeQuestionIndex;
   private onJoin;
   private onFinish;
   private onAnswerQuestion;
@@ -51,7 +52,8 @@ export class MultiJGameComponent implements OnInit, OnDestroy {
     this.onJoin = (data) => {
       console.log("rec Data", data);
       this.questions = randomizeArray(this.keyobjectPipe.transform(data.data.questions, []));
-      this.activeQuestion = this.questions[0]
+      this.activeQuestionIndex = 0;
+      this.activeQuestion = this.questions[this.activeQuestionIndex];
       console.log(this.activeQuestion);
     };
     this.onFinish = (data) => {};
@@ -87,6 +89,18 @@ export class MultiJGameComponent implements OnInit, OnDestroy {
     })
   }
 
+  previousQuestion() {
+
+    this.activeQuestionIndex -= 1;
+    this.activeQuestion = this.questions[this.activeQuestionIndex];
+  }
+
+  nextQuestion() {
+
+    this.activeQuestionIndex += 1;
+    this.activeQuestion = this.questions[this.activeQuestionIndex];
+  }
+
   onError() {
 
   }
@@ -94,6 +108,13 @@ export class MultiJGameComponent implements OnInit, OnDestroy {
 
   onSelect(e: MdRadioChange ) {
     console.log(e.value);
+    this.websocketService.send({
+      type: "MULTIJ_ANSWER_QUESTION",
+      data: {
+        questionid: this.questions[this.activeQuestionIndex].key,
+        answerid: +(e.value)
+      }
+    });
   }
 
 

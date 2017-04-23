@@ -14,7 +14,7 @@ module.exports = class MultiJService {
       if (this.questions[questionId].hasOwnProperty(answerId) === true) {
         this.answeredQuestions[questionId] = {
           yourAnswerId: answerId,
-          yourAnswerText: this.questions[questionId][answerId].AnswerText,
+          yourAnswerText: this.questions[questionId][answerId].answerText,
           questionText: this.questions[questionId].questionText,
           correct: this.questions[questionId][answerId].isCorrect
         }

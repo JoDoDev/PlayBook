@@ -8,7 +8,8 @@ export class KeyobjectPipe implements PipeTransform {
   transform(value, args:string[]):any {
     let keys = [];
     for (let key in value) {
-      keys.push({key: key, value: value[key]});
+      let index = +key;
+      keys.push({key: index, value: value[index]});
     }
     return keys;
   }

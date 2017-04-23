@@ -30,18 +30,19 @@ module.exports = class MultiJJoinHandler {
           for (var question of qResultQuestions) {
             if (typeof questions[question.questionId] === 'undefined') {
               questions[question.questionId] = {
-                questionText: question.questionText
+                questionText: question.questionText,
+                answers: {}
               };
               questionsAdmin[question.questionId] = {
                 questionText: question.questionText
               };
             }
 
-            questions[question.questionId][question.answerId] = {
-              AnswerText: question.answerText
+            questions[question.questionId].answers[question.answerId] = {
+              answerText: question.answerText
             };
             questionsAdmin[question.questionId][question.answerId] = {
-              AnswerText: question.answerText,
+              answerText: question.answerText,
               isCorrect: question.isCorrect
             };
           }
