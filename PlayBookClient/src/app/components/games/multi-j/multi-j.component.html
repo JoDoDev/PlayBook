@@ -1,0 +1,19 @@
+<md-card class="root-card">
+  <h1>MultiJ </h1>
+
+  <p>this is a early preview of this game there can be many bugs</p>
+
+
+  <md-input-container>
+    <input type="text" placeholder="Topic" mdInput [mdAutocomplete]="auto" #input>
+  </md-input-container>
+
+  <md-autocomplete #auto="mdAutocomplete">
+    <md-option *ngFor="let topic of topics | keyobject" [value]="topic.value.name">
+      {{ topic.value.name }}
+    </md-option>
+  </md-autocomplete>
+
+
+  <button md-raised-button (click)="startGame(input.value)">Start game</button>
+</md-card>

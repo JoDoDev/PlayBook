@@ -1,0 +1,21 @@
+<md-card class="root-card">
+  <h1>MultiJ </h1>
+
+  <p>{{ activeQuestion?.value.questionText }}</p>
+  <md-list>
+    <md-radio-group (change)="onSelect($event)">
+      <md-divider></md-divider>
+      <div *ngFor="let answer of activeQuestion?.value.answers | keyobject">
+      <md-list-item  md-line>
+        {{ answer.value.answerText }}
+        <div class="spacer"></div>
+        <md-radio-button value="{{ answer.key }}"></md-radio-button>
+      </md-list-item>
+      <md-divider></md-divider>
+      </div>
+    </md-radio-group>
+  </md-list>
+
+  <button md-raised-button (click)="previousQuestion()">Previus</button>
+  <button md-raised-button (click)="nextQuestion()">Next</button>
+</md-card>
